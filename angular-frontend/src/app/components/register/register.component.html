@@ -1,0 +1,40 @@
+
+<body>
+    <div *ngIf="showSuccessMessage" class="success">{{ successMessage }}</div>
+    <div class="register-container">
+      <div class="image">
+        <img
+          src="https://img.freepik.com/free-photo/sale-fashion-discounts-online-shopping-concept-overjoyed-dark-skinned-woman-chooses-clothes-clothing-store-rejoices-big-sales-holds-mobile_273609-32763.jpg?t=st=1709110955~exp=1709114555~hmac=9e758a876dffa4dea655df47633fc687ca5676b4e748759b36ee5c0177aec8a4&w=900"
+          alt=""
+          style="width: 100%; height: 100%"
+        />
+      </div>
+      <div class="formcontainer">
+        <h2>Create an account</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+          <label for="email">Email:</label><br />
+          <input type="email" id="email" name="email" formControlName="email" placeholder="Enter your email" required>
+          <div *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.touched" class="error-message">
+            Email is required.
+          </div>
+
+  
+          <label for="phone">Phone Number:</label><br />
+          <input type="tel" id="phone" name="phone" formControlName="phone" placeholder="Enter your phone number" required>
+          <div *ngIf="registerForm.get('phone')?.errors?.['required'] && registerForm.get('phone')?.touched" class="error-message">
+            Phone number is required.
+          </div>
+          <label for="password">Password:</label><br />
+          <input type="password" id="password" name="password" formControlName="password" placeholder="Enter your password" required><br />
+          <div *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched" class="error-message">
+            Password is required.
+          </div>
+  
+          <button type="submit"> <a style="color: white;"> Register</a> </button><br />
+          <a routerLink="/login">Already have an account? Login here</a>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  
