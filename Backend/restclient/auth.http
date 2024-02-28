@@ -1,0 +1,23 @@
+POST http://localhost:4001/auth
+Content-Type: application/json
+
+{
+    "email": "devbuyanzi@gmail.com",
+    "password": "123456"
+
+}
+
+####
+PUT http://localhost:4001/auth/reset_pwd
+Content-Type: application/json
+
+{
+    "email": "devbuyanzi@gmail.com",
+    "password": "1234567890"
+
+}
+
+####
+POST http://localhost:4001/auth/checkdetails
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgxMzJiMDg2LTkxNTktNGI2Ni1hY2IwLWYxYmQ4ZjkxNDFiYiIsImVtYWlsIjoiZmF2b3VyZ2FpdGFub0BnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImlhdCI6MTcwOTA5MDI4NSwiZXhwIjoxNzA5MzQ5NDg1fQ.GGqPWzjFKi4toUTwgQncA_RCk9oNs2Zwjyhx1CcGbwU
