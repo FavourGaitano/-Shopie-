@@ -1,6 +1,6 @@
 
 <body>
-    <div *ngIf="showSuccessMessage" class="success">{{ successMessage }}</div>
+    <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
     <div class="register-container">
       <div class="image">
         <img
@@ -12,29 +12,36 @@
       <div class="formcontainer">
         <h2>Create an account</h2>
         <form [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+
+          <label for="name">Name:</label><br />
+          <input type="text" id="name" name="name" formControlName="name" placeholder="Enter your name" required>
+          <div *ngIf="registerForm.get('name')?.errors?.['required'] && registerForm.get('name')?.touched" class="error-message">
+            Name is required.
+          </div>
+
           <label for="email">Email:</label><br />
           <input type="email" id="email" name="email" formControlName="email" placeholder="Enter your email" required>
           <div *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.touched" class="error-message">
             Email is required.
           </div>
 
-  
+
           <label for="phone">Phone Number:</label><br />
-          <input type="tel" id="phone" name="phone" formControlName="phone" placeholder="Enter your phone number" required>
-          <div *ngIf="registerForm.get('phone')?.errors?.['required'] && registerForm.get('phone')?.touched" class="error-message">
+          <input type="text" id="phone" name="phone_no" formControlName="phone_no" placeholder="Enter your phone number" required>
+          <div *ngIf="registerForm.get('phone_no')?.errors?.['required'] && registerForm.get('phone_no')?.touched" class="error-message">
             Phone number is required.
           </div>
+
           <label for="password">Password:</label><br />
           <input type="password" id="password" name="password" formControlName="password" placeholder="Enter your password" required><br />
           <div *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched" class="error-message">
             Password is required.
           </div>
-  
-          <button type="submit"> <a style="color: white;"> Register</a> </button><br />
+
+          <button type="submit" > <a style="color: white;"> Register</a> </button><br />
           <a routerLink="/login">Already have an account? Login here</a>
         </form>
       </div>
     </div>
   </body>
 
-  
