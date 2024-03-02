@@ -1,0 +1,47 @@
+### CREATE PRODUCT
+
+POST http://localhost:4001/product
+Content-Type: application/json
+
+{
+    "name": "Iphone 12",
+    "descr": "An amazing phone this one!",
+    "price": "74560",
+    "image": "N/A",
+    "category_id":"b3f77f35-a042-440b-8a9e-def800338670",
+    "quantity": "10"
+    
+}
+
+###GET ALL PRODUCTS
+GET http://localhost:4001/product
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDkxMjkzNTgsImV4cCI6MTcwOTM4ODU1OH0.SRseUW-7KB6FdZh9TUrfkoLk7OKggj0aQDXzkfzuFcw
+
+
+###GET PRODUCT BY ID
+GET http://localhost:4001/product/119a3ca5-23ad-43fd-bfba-39522cf68d63
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDkxMjkzNTgsImV4cCI6MTcwOTM4ODU1OH0.SRseUW-7KB6FdZh9TUrfkoLk7OKggj0aQDXzkfzuFcw
+
+###UPDATE PRODUCT
+PUT http://localhost:4001/product/119a3ca5-23ad-43fd-bfba-39522cf68d63
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDkxMjkzNTgsImV4cCI6MTcwOTM4ODU1OH0.SRseUW-7KB6FdZh9TUrfkoLk7OKggj0aQDXzkfzuFcw
+
+{
+    "name": "Iphone 12",
+    "descr": "An amazing phone this one!",
+    "price": "90000",
+    "image": "N/A",
+    "category_id":"b3f77f35-a042-440b-8a9e-def800338670",
+    "quantity": "10"
+    
+}
+
+
+###DELETE PRODUCT
+DELETE http://localhost:4001/product/119a3ca5-23ad-43fd-bfba-39522cf68d63
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDkxMjkzNTgsImV4cCI6MTcwOTM4ODU1OH0.SRseUW-7KB6FdZh9TUrfkoLk7OKggj0aQDXzkfzuFcw
+

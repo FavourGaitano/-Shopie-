@@ -30,10 +30,11 @@ export const createUser = async (req: Request, res: Response) => {
 
     const pool = await mssql.connect(sqlConfig);
 
-    // checking  if user allready  exists in the database by its email
+    // checking  if user allready  exists in the database by its email and phone no
     const result = (await pool
       .request()
       .input('email', mssql.VarChar, email)
+      .input('phone_no', mssql.VarChar, phone_no)
       .execute("CheckUserExists")).recordset;
 
       console.log("Your result",result.length);

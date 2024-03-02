@@ -2,6 +2,8 @@ import express,  {NextFunction, Request, Response, json} from 'express'
 import cors from 'cors'
 import userRouter from './Routes/user.routes'
 import auth_router from './Routes/auth.router'
+import productRouter from './Routes/product.router'
+import categoryRouter from './Routes/categories.routes'
 
 
 const app = express()
@@ -11,6 +13,8 @@ app.use(json())
 
 app.use('/users', userRouter)
 app.use('/auth', auth_router)
+app.use('/product', productRouter)
+app.use('/categories', categoryRouter)
 
 
 
