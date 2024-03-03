@@ -32,14 +32,14 @@ export const loginUser = async (req: Request, res: Response) => {
         
         if (!user) {
             // If no user is found
-            return res.status(404).json({ error: "User not found" });
+            return res.json({ error: "User not found" });
         }
         
         // If user is found
         const correct_pwd = await bcrypt.compare(password, user.password);
         if (!correct_pwd) {
             
-            return res.status(401).json({ error: "Incorrect password" });
+            return res.json({ error: "Incorrect password" });
         }
         
         

@@ -6,8 +6,8 @@
               <h3>.</h3>
           </div >
           <div class="contents" style="color:white;" >
-            <a style="color:white;" href="#" class="active"><i id ="icon" class="fas fa-tachometer-alt"></i>Dashboard</a>
-            <a style="color:white;" href="#" ><i id ="icon" class="fas fa-users"></i>Users</a>
+            <a  routerLink="dashboard"  style="color:white;" href="#"><i id ="icon" class="fas fa-tachometer-alt"></i>Dashboard</a>
+            <a routerLink="view-users" style="color:white;" href="#" ><i id ="icon" class="fas fa-users"></i>Users</a>
             <a style="color:white;"  href="#"><i id ="icon" class="fas fa-box-open"></i>Products</a>
             <a style="color:white;" href="#"><i id ="icon" class="fas fa-tags"></i>Categories</a>
             <a style="color:white;" href="#"><i id ="icon" class="fas fa-shopping-cart"></i>Orders</a>
@@ -15,6 +15,6 @@
       </div>
   </div>
   <div class="main-content">
-      <!-- Main content goes here -->
+       <router-outlet></router-outlet>
   </div>
 </div>
