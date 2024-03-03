@@ -7,13 +7,19 @@ import { AdminComponent } from './components/admin/admin.component';
 import { ViewUsersComponent } from './components/view-users/view-users.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UpdateUserComponent } from './components/update-user/update-user.component';
+import { ViewProductsComponent } from './components/view-products/view-products.component';
+import { ProductsComponent } from './components/products/products.component';
+import { UpdateProductComponent } from './components/update-product/update-product.component';
 
 export const routes: Routes = [
 
     { path: 'admin', component: AdminComponent, children:[
       {path: 'view-users', component: ViewUsersComponent},
       {path: 'dashboard', component: DashboardComponent},
-      {path: 'update-user/:user_id', component: UpdateUserComponent}
+      {path: 'update-user/:user_id', component: UpdateUserComponent},
+      {path: 'view-products', component: ViewProductsComponent},
+      {path: 'products', component: ProductsComponent},
+      {path: 'update-product/:product_id', component: UpdateProductComponent}
     ]},
     { path: '', component: HomeComponent},
     { path: 'registration', component: RegisterComponent},
