@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {register} from '../interfaces/register.interfaces';
 import {login} from '../interfaces/login.interfaces'
+import{Product} from '../interfaces/products.interfaces'
+import { Category } from '../interfaces/categories.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +38,15 @@ export class AuthService {
 
       })
     }).subscribe(res=>callback(res))
+  }
+
+  createProduct(product_details:Product){
+
+    return this.http.post<{message:string, error:string}>('http://localhost:4001/product', product_details)
+  }
+
+  createCategory(category_details:Category){
+
+    return this.http.post<{message:string, error:string}>('http://localhost:4001/categories', category_details)
   }
 }
