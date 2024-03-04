@@ -48,7 +48,7 @@ export class LoginComponent {
                   setTimeout(() => this.router.navigate(['admin']), 2000);
                 } else if (tokenResponse.info.role === 'user') {
                   this.successMessage = 'Login successful.';
-                  setTimeout(() => this.router.navigate(['users']), 2000);
+                  setTimeout(() => this.router.navigate(['user']), 2000);
 
                 }
               },

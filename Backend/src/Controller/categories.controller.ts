@@ -29,7 +29,7 @@ export const createCategory = async (req: Request, res: Response) => {
       console.log("Your result",result.length);
 
       if(result.length >=1){
-        return res.status(503).json({message:"This category already exists"});
+        return res.json({message:"This category already exists"});
      
       }else { 
               const createCategory = (
@@ -42,12 +42,12 @@ export const createCategory = async (req: Request, res: Response) => {
              
 
               console.log(createCategory);
-              return res.status(201).json
+              return res.json
                 ({message: "Category created succesfully."});
         };
         } catch (err) {
           console.log(err);
-    return res.sendStatus(500).json({ message: err });
+    return res.json({ message: err });
     }
 };
 
