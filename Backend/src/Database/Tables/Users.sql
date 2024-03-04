@@ -9,3 +9,4 @@ CREATE TABLE Users (
     isDeleted BIT NOT NULL DEFAULT 0,
     isWelcomed BIT NOT NULL DEFAULT 0
 );
+

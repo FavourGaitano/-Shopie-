@@ -9,7 +9,7 @@ export const sqlConfig = {
 
     user: process.env.DB_USER || 'sa', 
     password: process.env.DB_PWD || 'SQL-SERVER' ,
-    database: process.env.DB_NAME || 'ProjectManagement',
+    database: process.env.DB_NAME || 'SHOPIE',
     server :'FAVOUR\\FAVOUR',
 
     pool:{

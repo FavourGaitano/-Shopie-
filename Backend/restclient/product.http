@@ -8,7 +8,7 @@ Content-Type: application/json
     "descr": "An amazing phone this one!",
     "price": "74560",
     "image": "N/A",
-    "category_id":"b3f77f35-a042-440b-8a9e-def800338670",
+    "category_id":"696fa4aa-412b-42b6-a89a-0e93b2530731",
     "quantity": "10"
     
 }
@@ -20,7 +20,7 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04
 
 
 ###GET PRODUCT BY ID
-GET http://localhost:4001/product/119a3ca5-23ad-43fd-bfba-39522cf68d63
+GET http://localhost:4001/product/d3652ac1-43d8-4458-949c-534c644ea7f7
 Content-Type: application/json
 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0OTIyNTcsImV4cCI6MTcwOTc1MTQ1N30.vVmoLh3GdSmHF7kLwraj819KnARolbcYQG9hBwuQLPw
 

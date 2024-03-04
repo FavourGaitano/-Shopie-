@@ -35,6 +35,33 @@
   .section-m1 {
     margin: 40px 0;
   }
+  .container {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 27px;
+
+  }
+  
+  .search-container {
+    position: relative;
+  }
+  
+  .search-bar {
+    width: 400px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* Use rgba for transparent background */
+    outline: none;
+  }
+  
+  .search-bar::placeholder {
+    color: #555;
+  }
+  
   
   button.normal {
     font-size: 14px;
@@ -69,10 +96,12 @@
     top: 0;
     left: 0;
     right: 0;
+    flex-wrap: wrap;
   }
   
   .header-list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
   }
@@ -119,3 +148,53 @@
     left: 20px;
   }
   
+
+  /* Hamburger Menu for Mobile Screens */
+
+@media only screen and (max-width: 370px) {
+
+  #header {
+    padding: 10px; 
+    flex-direction: column-reverse;
+
+  }
+
+  .header-list {
+    
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-list-nav ul {
+    flex-direction: column;
+    margin: 0; 
+    padding: 0; /* Reset padding */
+  }
+
+  .header-list-nav ul li {
+    padding: 8px 0; /* Reduce padding to decrease the gap between items */
+    text-align: center; /* Center text within each list item */
+    width: 100%; /* Make each list item full width */
+  }
+
+  .header-list-nav ul a {
+    font-size: 14px; /* Adjust font size to make it smaller */
+  }
+
+  .search-bar {
+    width: 100%; /* Make the search bar full width */
+    margin-top: 10px; /* Add some space between search bar and navigation */
+  }
+
+  .header-list-icon a {
+    padding: 10px; /* Adjust padding for the icon */
+  }
+
+  /* Add more styles or adjustments as needed */
+
+
+  .header-logo img{
+    display: none;
+  }
+}
+

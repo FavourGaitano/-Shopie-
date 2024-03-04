@@ -13,6 +13,7 @@ import { UpdateProductComponent } from './components/update-product/update-produ
 import { ViewCategoriesComponent } from './components/view-categories/view-categories.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { UpdateCategoryComponent } from './components/update-category/update-category.component';
+import { UserComponent } from './components/user/user.component';
 
 export const routes: Routes = [
 
@@ -30,8 +31,8 @@ export const routes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'registration', component: RegisterComponent},
     { path: 'login', component: LoginComponent},
-    // { path: 'user', component: UserDashboardComponent},
+    { path: 'user', component: UserComponent},
     { path: 'home', component: HomeComponent},
-    // {path:'**', component: NotfoundComponent}
+    // {path:'**', component: PageNotfoundComponent},
     { path: 'cart', component: ShoppingCartComponent},
 ];

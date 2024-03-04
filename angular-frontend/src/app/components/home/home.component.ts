@@ -5,7 +5,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NavbarComponent],
+  imports: [CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
