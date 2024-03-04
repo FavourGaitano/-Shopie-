@@ -1,18 +1,38 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { ProductsService } from '../../services/products.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
   timeRemaining: any;
+  productsArr: any[] = [];
+  successMessage: string = '';
+  errorMessage: string = '';
 
-  constructor() { }
+  constructor(private products: ProductsService) {
+    this.fetchProducts();
+  }
+
+  fetchProducts() {
+    this.products.getProducts().subscribe((res) => {
+      if (res.error) {
+        console.log(res.error);
+      } else if (res.products) {
+        console.log(res.products);
+        this.productsArr = res.products;
+
+        this.productsArr = res.products
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.calculateTimeRemaining();
@@ -22,7 +42,7 @@ export class HomeComponent {
   }
 
   calculateTimeRemaining(): void {
-    const endTime = new Date('2024-03-09T00:00:00Z'); // Set your offer end time
+    const endTime = new Date('2024-03-09T00:00:00Z');
     const currentTime = new Date();
     const timeDifference = endTime.getTime() - currentTime.getTime();
 
