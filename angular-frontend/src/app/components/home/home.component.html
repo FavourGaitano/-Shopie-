@@ -52,194 +52,40 @@
       <p style="margin-left: 100px;">Summer Collection New Morden Design</p>
 
       <div class="pro-collection">
-        <div *ngIf="successMessage" class="success-message">{{successMessage}}</div>
-        <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
-        <div *ngFor="let product of productsArr" class="product-cart">
-            <img style="height:270px;" src="{{ product.image }}" alt="{{ product.name }}" />
-            <span>{{ product.CategoryName }}</span>
-            <h4>{{ product.name }}</h4>
-            <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </div>
-            <h4 class="price">Ksh.{{product.price}}</h4>
-            <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+        <div class="display">
+          <div *ngFor="let product of paginatedProducts" class="product-cart">
+              <img style="height:270px;" src="{{ product.image }}" alt="{{ product.name }}" />
+              <span>{{ product.CategoryName }}</span>
+              <h4>{{ product.name }}</h4>
+              <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+              </div>
+              <h4 class="price">Ksh.{{product.price}}</h4>
+              <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
         </div>
-    </div>
+        <div class="controls">
+          <div class="pagination-controls">
+            <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">
+              << Prev
+            </button>
 
-      <div class="pro-collection">
-        <div class="product-cart">
-          <img src="../../../assets/images/products/f1.jpg" alt="product image" />
-          <span>adidas</span>
-          <h4>Cartoon Astronaut T-Shirts1</h4>
-          <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
+            <button
+              (click)="goToPage(currentPage + 1)"
+              [disabled]="currentPage === maxPage()"
+            >
+              Next >>
+            </button>
           </div>
-          <h4 class="price">Ksh.78</h4>
-          <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          <div class="pageno">Page {{ currentPage }} / {{ maxPage() }}</div>
         </div>
-        <div class="product-cart">
-          <img src="../../../assets/images/products/f2.jpg" alt="product image" />
-          <span>adidas</span>
-          <h4>Cartoon Astronaut T-Shirts</h4>
-          <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <h4 class="price">Ksh.78</h4>
-          <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
-        </div>
-        <div class="product-cart">
-          <img src="../../../assets/images/products/f3.jpg" alt="product image" />
-          <span>adidas</span>
-          <h4>Cartoon Astronaut T-Shirts</h4>
-          <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <h4 class="price">Ksh.78</h4>
-          <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
-        </div>
-        <div class="product-cart">
-          <img src="../../../assets/images/products/f4.jpg" alt="product image" />
-          <span>adidas</span>
-          <h4>Cartoon Astronaut T-Shirts</h4>
-          <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <h4 class="price">Ksh.78</h4>
-          <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
-        </div>
-        <div class="product-cart">
-          <img src="../../../assets/images/products/f5.jpg" alt="product image" />
-          <span>adidas</span>
-          <h4>Cartoon Astronaut T-Shirts</h4>
-          <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <h4 class="price">Ksh.78</h4>
-          <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
-        </div>
-        <div class="product-cart">
-          <img src="../../../assets/images/products/f6.jpg" alt="product image" />
-          <span>adidas</span>
-          <h4>Cartoon Astronaut T-Shirts</h4>
-          <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <h4 class="price">Ksh.78</h4>
-          <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
-        </div>
-        <div class="product-cart">
-          <img src="../../../assets/images/products/f7.jpg" alt="product image" />
-          <span>adidas</span>
-          <h4>Cartoon Astronaut T-Shirts</h4>
-          <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <h4 class="price">Ksh.78</h4>
-          <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
-        </div>
-        <div class="product-cart">
-           <img src="../../../assets/images/products/f8.jpg" alt="product image" />
-          <span>adidas</span>
-          <h4>Cartoon Astronaut T-Shirts</h4>
-          <div class="stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-          <h4 class="price">Ksh.78</h4>
-          <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
-        </div>
-        <div class="product-cart">
-            <img src="../../../assets/images/products/f8.jpg" alt="product image" />
-           <span>adidas</span>
-           <h4>Cartoon Astronaut T-Shirts</h4>
-           <div class="stars">
-             <i class="fa-solid fa-star"></i>
-             <i class="fa-solid fa-star"></i>
-             <i class="fa-solid fa-star"></i>
-             <i class="fa-solid fa-star"></i>
-             <i class="fa-solid fa-star"></i>
-           </div>
-           <h4 class="price">Ksh.78</h4>
-           <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
-         </div>
-         <div class="product-cart">
-            <img src="../../../assets/images/products/f7.jpg" alt="product image" />
-            <span>adidas</span>
-            <h4>Cartoon Astronaut T-Shirts</h4>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <h4 class="price">Ksh.78</h4>
-            <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
-          </div>
-          <div class="product-cart">
-            <img src="../../../assets/images/products/f6.jpg" alt="product image" />
-            <span>adidas</span>
-            <h4>Cartoon Astronaut T-Shirts</h4>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <h4 class="price">Ksh.78</h4>
-            <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
-          </div>
-          <div class="product-cart">
-            <img src="../../../assets/images/products/f6.jpg" alt="product image" />
-            <span>adidas</span>
-            <h4>Cartoon Astronaut T-Shirts</h4>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <h4 class="price">Ksh.78</h4>
-            <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
-          </div>
       </div>
+
+      
     </section>
 
     <section id="off-banner" class="section-m1">

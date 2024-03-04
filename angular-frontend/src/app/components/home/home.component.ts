@@ -12,8 +12,14 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+
+  currentPage: number = 1;
+  itemsPerPage: number = 12;
+  paginatedProducts: any[] = []
+
   timeRemaining: any;
   productsArr: any[] = [];
+
   successMessage: string = '';
   errorMessage: string = '';
 
@@ -28,10 +34,26 @@ export class HomeComponent {
       } else if (res.products) {
         console.log(res.products);
         this.productsArr = res.products;
+        this.updatePaginatedProducts();
 
         this.productsArr = res.products
       }
     });
+  }
+
+  updatePaginatedProducts() {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    this.paginatedProducts = this.productsArr.slice(startIndex, endIndex);
+  }
+
+  goToPage(page: number) {
+    this.currentPage = page;
+    this.updatePaginatedProducts();
+  }
+
+  maxPage(): number {
+    return Math.ceil(this.productsArr.length / this.itemsPerPage);
   }
 
   ngOnInit(): void {
