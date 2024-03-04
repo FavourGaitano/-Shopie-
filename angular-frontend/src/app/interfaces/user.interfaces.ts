@@ -4,6 +4,7 @@ export interface User{
     email:string;
     phone_no:string;
     role?:string;
+    created_at?:string;
     password:string;
 
 }

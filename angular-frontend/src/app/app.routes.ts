@@ -4,12 +4,17 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { UserComponent } from './components/user/user.component';
-import { PageNotfoundComponent } from './components/page-notfound/page-notfound.component';
 
 export const routes: Routes = [
 
-    { path: 'admin', component: AdminComponent},
+    { path: 'admin', component: AdminComponent, children:[
+      {path: 'view-users', component: ViewUsersComponent},
+      {path: 'dashboard', component: DashboardComponent},
+      {path: 'update-user/:user_id', component: UpdateUserComponent},
+      {path: 'view-products', component: ViewProductsComponent},
+      {path: 'products', component: ProductsComponent},
+      {path: 'update-product/:product_id', component: UpdateProductComponent}
+    ]},
     { path: '', component: HomeComponent},
     { path: 'registration', component: RegisterComponent},
     { path: 'login', component: LoginComponent},

@@ -1,0 +1,29 @@
+<div class="form-container">
+  <form [formGroup]="updateUserForm" (ngSubmit)="updateUser()" class="form">
+
+    <div><h4 style ="margin-bottom:15px; color:white; text-align:center;" >Update User</h4></div>
+    <div *ngIf="successMessage" class="success-message">{{successMessage}}</div>
+
+    <div class="form-group">
+      <label for="name">Full name</label>
+      <input type="text" formControlName="name" id="name" required>
+      <div *ngIf="updateUserForm.get('name')?.invalid && updateUserForm.get('name')?.touched" class="error-message">Name is required</div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" formControlName="email" id="email" required>
+      <div *ngIf="updateUserForm.get('email')?.invalid && updateUserForm.get('email')?.touched && !updateUserForm.get('email')?.dirty" class="error-message">Email is required</div>
+      <div *ngIf="updateUserForm.get('email')?.invalid && updateUserForm.get('email')?.touched && updateUserForm.get('email')?.dirty" class="error-message">Invalid format</div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone_no">Phone No.</label>
+      <input type="text" formControlName="phone_no" id="phone_no" required>
+      <div *ngIf="updateUserForm.get('phone_no')?.invalid && updateUserForm.get('phone_no')?.touched && !updateUserForm.get('phone_no')?.dirty" class="error-message">Phone No. is required</div>
+    </div>
+    
+    <button type="submit" [disabled]="updateUserForm.invalid" class="form-submit-btn">Update</button>
+    <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
+  </form>
+</div>
