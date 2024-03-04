@@ -155,6 +155,14 @@
 
 .pro-collection {
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 60px;
+    gap: 20px;
+  }
+  .display{
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 60px;
@@ -394,4 +402,37 @@
   color: red;
   font-size: 26px; /* Increased font size */
   font-weight: bold;
+}
+
+.pagination-controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  background-color: #ffbd59;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-controls button[disabled] {
+  background-color: #ffe0b3;
+  cursor: default;
+}
+
+.pagination-controls button:not([disabled]):hover {
+  background-color: #ffac30;
+}
+
+.pageno {
+  text-align: center;
+  color: #000;
+  margin-top: 10px;
+  font-size: 16px;
 }
