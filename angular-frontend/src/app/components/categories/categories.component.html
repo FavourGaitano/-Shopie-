@@ -1,0 +1,19 @@
+
+
+<div class="form-container">
+  <form [formGroup]="categoryForm" (ngSubmit)="createCategory()" class="form">
+    <div><h4 style="margin-bottom:15px; color:white; text-align:center;">Create Category</h4></div>
+
+    <div *ngIf="successMessage" class="success-message">{{successMessage}}</div>
+    <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
+
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" formControlName="name">
+      <div *ngIf="categoryForm.get('name')?.invalid && categoryForm.get('name')?.touched" class="error-message">Name is required</div>
+    </div>
+
+    <button type="submit" [disabled]="categoryForm.invalid" class="form-submit-btn">Submit</button>
+  </form>
+</div>
+
