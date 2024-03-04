@@ -14,6 +14,7 @@ import { ViewCategoriesComponent } from './components/view-categories/view-categ
 import { CategoriesComponent } from './components/categories/categories.component';
 import { UpdateCategoryComponent } from './components/update-category/update-category.component';
 import { UserComponent } from './components/user/user.component';
+import { ViewOneProductComponent } from './components/view-one-product/view-one-product.component';
 
 export const routes: Routes = [
 
@@ -32,6 +33,7 @@ export const routes: Routes = [
     { path: 'registration', component: RegisterComponent},
     { path: 'login', component: LoginComponent},
     { path: 'user', component: UserComponent},
+    { path: 'view-one-product', component: ViewOneProductComponent},
     
     { path: 'home', component: HomeComponent},
     // {path:'**', component: PageNotfoundComponent},
