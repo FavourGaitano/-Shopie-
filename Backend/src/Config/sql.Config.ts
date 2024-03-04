@@ -8,9 +8,9 @@ dotenv.config();
 export const sqlConfig = {
 
     user: process.env.DB_USER || 'sa', 
-    password: process.env.DB_PWD || 'SQL-SERVER' ,
+    password: process.env.DB_PWD || '1234' ,
     database: process.env.DB_NAME || 'SHOPIE',
-    server :'FAVOUR\\FAVOUR',
+    server :'localhost',
     SECRET: "IUTR87GJWEF",
 
   pool: {
