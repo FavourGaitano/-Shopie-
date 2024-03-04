@@ -32,6 +32,7 @@ export const routes: Routes = [
     { path: 'registration', component: RegisterComponent},
     { path: 'login', component: LoginComponent},
     { path: 'user', component: UserComponent},
+    
     { path: 'home', component: HomeComponent},
     // {path:'**', component: PageNotfoundComponent},
     { path: 'cart', component: ShoppingCartComponent},
