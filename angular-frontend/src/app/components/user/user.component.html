@@ -76,6 +76,42 @@
       </div>
       <h1 style="margin-left: 100px;">Featured Products</h1>
       <p style="margin-left: 100px;">Summer Collection New Morden Design</p>
+
+      <div class="pro-collection">
+        <div class="display">
+          <div *ngFor="let product of paginatedProducts" class="product-cart">
+              <img style="height:270px;" src="{{ product.image }}" alt="{{ product.name }}" />
+              <span>{{ product.CategoryName }}</span>
+              <h4>{{ product.name }}</h4>
+              <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+              </div>
+              <h4 class="price">Ksh.{{product.price}}</h4>
+              <a><i class="fa-solid fa-cart-shopping buy-icon"></i></a>
+          </div>
+        </div>
+        <div class="controls">
+          <div class="pagination-controls">
+            <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">
+              << Prev
+            </button>
+
+            <button
+              (click)="goToPage(currentPage + 1)"
+              [disabled]="currentPage === maxPage()"
+            >
+              Next >>
+            </button>
+          </div>
+          <div class="pageno">Page {{ currentPage }} / {{ maxPage() }}</div>
+        </div>
+      </div>
+
+
       <div class="pro-collection">
         <div class="product-cart">
           <img src="../../../assets/images/products/f1.jpg" alt="product image" />
