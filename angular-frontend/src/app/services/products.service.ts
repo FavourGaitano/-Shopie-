@@ -13,11 +13,11 @@ export class ProductsService {
   constructor(private http:HttpClient) {}
 
   getProducts(){
-    const token = localStorage.getItem('authToken') as string
+    // const token = localStorage.getItem('authToken') as string
     return this.http.get<productsResponse>('http://localhost:4001/product', {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
-        token
+        // token
       })
     })
   }
