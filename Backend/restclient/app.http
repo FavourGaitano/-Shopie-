@@ -4,10 +4,10 @@ POST http://localhost:4001/users
 Content-Type: application/json
 
 {
-    "name": "Favour ",
-    "email": "favour@gmail.com",
-    "phone_no": "0704665808",
-    "password": "1234"
+    "name": "Favour Andabwa",
+    "email": "favour2@gmail.com",
+    "phone_no": "07046658508",
+    "password": "123456"
     
 }
 
