@@ -1,0 +1,209 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    background-color: white;
+    margin-top: 170px;
+}
+.main{
+    width: 70vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding-right: 79px;
+    
+}
+
+
+.addprofile{
+    display: flex;
+    justify-content: flex-end;
+    width: 30px;
+    height: 30px;
+    justify-content: space-between;
+    padding: left 10px;
+}
+.small{
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    
+}
+.content{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    justify-content: space-around;
+}
+.small > img{
+    width: 40px;
+    margin: 10px;
+    border-radius: 3px;
+}
+.description{
+    background-color: white;
+    width: 40px;
+    padding: 40px;
+}
+.content > div{
+    width: 100vh;
+    border-radius: 15px;
+}
+.images > div{
+    width: 70px;
+    border-radius: 10px;
+}
+.price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 20px;
+}
+
+.largeimg{
+    margin-left: 130px;
+    margin-top: 55px;
+    border-radius: 3px;
+}
+.largeimg >img{
+    border-radius: 20px;
+}
+
+.sneakers{
+    margin-left: 100px;
+    font-size: larger;
+    font-weight: bolder;
+    background-color: white;
+    margin: left 70px;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: row;
+    gap: 17px;
+    background-color: white;
+    margin-right: 300px;
+
+}
+
+.cart{
+    display:flex;
+    gap :20px;
+}
+.person{
+    margin-left: 30px;
+}
+
+.company{
+    color:white;
+    font-size: 30px;
+}
+
+.per{
+    margin: 13px;
+    color:rgb(214, 74, 74);
+    border: solid 0px ;
+    border-radius: 3px;
+    background-color: rgb(235, 182, 182);
+}
+.price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left:  60px;
+    font-size: large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+.perc{
+    font-weight: bold ;
+    color: rgb(219, 207, 207);
+    stroke:2px;
+    margin-bottom: 40px;
+   
+}
+
+.addcart>span{
+    margin: 10px;
+}
+
+.addcart{
+    background-color:rgb(243, 234, 234);
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    
+}
+
+.addcart>span{
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.additem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.description >.add{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+.additem{
+    background-color: rgb(69, 177, 69);
+    height: 34px;
+    width: 400pxpx;
+    padding-left: 24px;
+    padding-right: 24px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    
+}
+.additem:hover{
+    background-color: rgb(7, 51, 7);
+}
+.cart1{
+   margin: 4px;
+}
+.additem>img{
+    margin-right: 13px;
+    
+}
+.sneakers{
+    margin-right: 80px;
+    font-weight: bolder;
+    font-size: large;
+    color: brown;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.desc>p{
+    color: brown;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    margin-bottom: 4px;
+}
+
+.header>p{
+    color: rgba(10, 43, 73, 0.829);
+
+}
+.price{
+    margin-top: 3px;
+}
+

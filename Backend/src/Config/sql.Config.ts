@@ -13,6 +13,8 @@ export const sqlConfig = {
     server :'FAVOUR\\FAVOUR',
     SECRET: "IUTR87GJWEF",
 
+
+
   pool: {
     max: 10,
     min: 0,

@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { ProductsService } from '../../services/products.service';import { RouterLink } from '@angular/router';
+import { ViewOneProductComponent } from '../view-one-product/view-one-product.component';
 
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, RouterLink],
+  imports: [CommonModule, NavbarComponent, RouterLink, ViewOneProductComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
