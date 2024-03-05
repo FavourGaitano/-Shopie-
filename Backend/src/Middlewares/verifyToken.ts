@@ -13,6 +13,8 @@ export interface ExtendedUserRequest extends Request{
 export const verifyToken = (req:ExtendedUserRequest, res: Response, next: NextFunction) =>{
     try {
         const token = req.headers['token'] as string
+        console.log("received", token);
+        
 
         if(!token){
             return res.json({

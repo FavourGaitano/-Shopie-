@@ -7,61 +7,68 @@ import { sqlConfig } from '../Config/sql.Config';
 import Connection from '../DbHelper/dbhelper';
 
 
+//Create Cart
 
-
-////check if cart exists then create cart
 export const createCart = async (req: Request, res: Response) => {
   try {
     let id = v4();
     console.log("Cart:", id);
-    const {user_id, product_id, total_price, quantity}: Cart = req.body;
+    const {user_id, product_id, total_price, quantity} = req.body;
 
     console.log(req.body);
 
-
     const pool = await mssql.connect(sqlConfig);
 
-    // checking  if cart already  exists in the database by its user id
+    // checking if cart already exists in the database by its user_id
     const result = await pool
       .request()
       .input('user_id', mssql.VarChar, user_id)
       .execute("CheckCartExists")
 
-      console.log("Your result",result.recordset.length);
+    console.log("Your result", result.recordset.length);
 
-      if(result.recordset.length >=1){
-        const addProductToCart = await pool
+    if (result.recordset.length >= 1) {
+      // Before adding product, check if the product exists in the cart
+      const productCheck = await pool
         .request()
-        .input('cart_id', mssql.VarChar, result.recordset[0].cart_id) 
+        .input('cart_id', mssql.VarChar, result.recordset[0].cart_id)
         .input('product_id', mssql.VarChar, product_id)
-        .input('quantity', mssql.Int, quantity)
+        .execute('CheckProductInCart');
+
+      // If product exists in the cart, return a message to update quantity
+      if (productCheck.recordset.length > 0) {
+        return res.status(400).json({ message: "Product exists in cart, please update quantity." });
+      } else {
         
-        .execute('addProductToCart');
+        const addProductToCart = await pool
+          .request()
+          .input('cart_id', mssql.VarChar, result.recordset[0].cart_id)
+          .input('product_id', mssql.VarChar, product_id)
+          .input('quantity', mssql.Int, quantity)
+          .execute('addProductToCart');
 
         console.log(addProductToCart);
         return res.status(200).json({ message: "Product added to cart successfully." });
+      }
+    } else {
+      // If cart does not exist, create a new cart and add the product
+      const createCart = await pool
+        .request()
+        .input('cart_id', mssql.VarChar, id)
+        .input('product_id', mssql.VarChar, product_id)
+        .input('user_id', mssql.VarChar, user_id)
+        .input('total_price', mssql.Numeric, total_price)
+        .execute('createCart');
 
-     
-      }else { 
-              const createCart = (
-                await pool
-                  .request()
-                .input('cart_id', mssql.VarChar, id)
-                .input('product_id', mssql.VarChar, product_id)
-                .input('user_id', mssql.VarChar, user_id)
-                .input('total_price', mssql.Numeric, total_price)
-                .execute('createCart')).rowsAffected;
-             
-
-              console.log(createCart);
-              return res.status(201).json
-                ({message: "Cart created succesfully."});
-        };
-        } catch (err) {
-          console.log(err);
-    return res.sendStatus(500).json({ message: err });
+      console.log(createCart);
+      return res.status(201).json({ message: "Cart created successfully." });
     }
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ message: err});
+  }
 };
+
 
 //Dbhelper get all carts
 export const getallCarts = async(req:Request, res: Response)=>{

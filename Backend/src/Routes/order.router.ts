@@ -8,7 +8,7 @@ orderRouter.post('/', createOrder)
 orderRouter.get('/' , verifyToken ,getAllOrders)
 orderRouter.get("/userID/:user_id" , verifyToken, getOrderByUserId)
 orderRouter.delete("/:order_id" , verifyToken, cancelOrder);
-orderRouter.post("/:order_id" , verifyToken, changeStatus);
+orderRouter.post("/:order_id" ,changeStatus);
 
 
 export default orderRouter
