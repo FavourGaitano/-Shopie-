@@ -111,6 +111,22 @@ export const getCartByUserId = async (req: Request, res: Response) => {
   }
 };
 
+//Dbhelper for when user checksoutcart
+export const checkoutCart = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.cart_id;
+    console.log("Cart ID found:", id);
+    let cart = await Connection.execute("checkoutCart", { cart_id: id });
+
+    return res.json({  message: "Cart checkout success! We are working on your order" });
+  } catch (error) {
+    console.log("Error in getting data from database", error);
+    return res
+      .status(400)
+      .json({ message: "There was an issue checking out cart" });
+  }
+};
+
 
 
     //Dbhelper delete product in a cart

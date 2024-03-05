@@ -1,37 +1,33 @@
-### CREATE CART
+### CREATE ORDER
 
-POST http://localhost:4001/cart
+POST http://localhost:4001/order
 Content-Type: application/json
 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk1OTY4MzIsImV4cCI6MTcwOTg1NjAzMn0.AQeAgxaFcxe7n6XM0Qw4K3HfHvzJiV-6gqnKALOfKe0
 
 {
-    "user_id": "2c5d360a-00b4-4d60-80b3-d265609afff2",
-    "product_id": "e567250a-340c-4ff3-9480-d7efa33f3fe6",
-    "quantity": 10
+    "cart_id": "073e7665-4ef0-4811-b52c-40b0434af917",
+    "user_id": "11614117-f509-4693-91b8-5b230ce3420d"
+   
     
     
 }
 
-###GET ALL CARTS
-GET http://localhost:4001/cart
+###GET ALL ORDERS
+GET http://localhost:4001/order
 Content-Type: application/json
 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0OTIyNTcsImV4cCI6MTcwOTc1MTQ1N30.vVmoLh3GdSmHF7kLwraj819KnARolbcYQG9hBwuQLPw
 
-###GET CART BY USER ID
-GET http://localhost:4001/cart/userID/2c5d360a-00b4-4d60-80b3-d265609afff2
+###GET ORDERS BY USER ID
+GET http://localhost:4001/order/userID/11614117-f509-4693-91b8-5b230ce3420d
 Content-Type: application/json
 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0OTIyNTcsImV4cCI6MTcwOTc1MTQ1N30.vVmoLh3GdSmHF7kLwraj819KnARolbcYQG9hBwuQLPw
 
-###CHECKOUT CART
-PUT http://localhost:4001/cart/checkout/073e7665-4ef0-4811-b52c-40b0434af917
-Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0OTIyNTcsImV4cCI6MTcwOTc1MTQ1N30.vVmoLh3GdSmHF7kLwraj819KnARolbcYQG9hBwuQLPw
-
-###DELETE PRODUCT IN CART
-DELETE http://localhost:4001/cart/073e7665-4ef0-4811-b52c-40b0434af917
+###CANCEL ORDER
+DELETE http://localhost:4001/order/46cb1718-ed93-4c70-be99-f39285adee42
 Content-Type: application/json
 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0OTIyNTcsImV4cCI6MTcwOTc1MTQ1N30.vVmoLh3GdSmHF7kLwraj819KnARolbcYQG9hBwuQLPw
 
-{
-    "product_id": "28b5a782-a065-4a0d-8e5b-549cba4d36b6"
-}
+###CHANGE ORDER STATUS
+POST http://localhost:4001/order/46cb1718-ed93-4c70-be99-f39285adee42
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0OTIyNTcsImV4cCI6MTcwOTc1MTQ1N30.vVmoLh3GdSmHF7kLwraj819KnARolbcYQG9hBwuQLPw
