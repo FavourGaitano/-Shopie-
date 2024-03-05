@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Shopie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body { font-family: 'Inter', sans-serif; font-size:16px; margin: 0; padding: 0; background-color: #f4f4f4; }
+        .container { max-width: 600px; margin: 20px auto; background: #ffffff; }
+        .header { background-color: #007bff; color: white; padding: 10px 20px; text-align: center; }
+        .content { padding: 20px; }
+        .footer { background-color: #f4f4f4; color: #888888; padding: 10px 20px; text-align: center; font-size: 0.8em; }
+        .button { background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; }
+        img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to Shopie, <%= name %></h1>
+        </div>
+        <div class="content">
+            <p>Hi, <%= name %>,</p>
+            <p>Thank you for joining Shopie! Your ultimate online shopping destination. Dive into a sea of choices with our wide range of products, designed to enhance your shopping experience.</p>
+            <p>
+                <!-- <img src="https://example.com/welcome-to-shopie.jpg" alt="Welcome to Shopie"> -->
+            </p>
+            <p>From browsing the latest collections to adding favorites to your cart, Shopie makes shopping effortless. Ready to explore? Your next great find is just a click away.</p>
+            <p>If you need any assistance or have questions, our dedicated support team is always here to help you.</p>
+            <p>Happy Shopping!<br>The Shopie Team</p>
+        </div>
+        <div class="footer">
+            Please do not reply to this email. For support, reach out to us at <a href="mailto:support@shopie.com">support@shopie.com</a>.
+        </div>
+    </div>
+</body>
+</html>

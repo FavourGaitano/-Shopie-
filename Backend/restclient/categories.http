@@ -1,0 +1,36 @@
+### CREATE CATEGORY
+
+POST http://localhost:4001/categories
+Content-Type: application/json
+
+{
+    "name": "Phones",
+    "description": "Mobile phones"   
+}
+
+###GET ALL CATEGORIES
+GET http://localhost:4001/categories/get
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDkxMjkzNTgsImV4cCI6MTcwOTM4ODU1OH0.SRseUW-7KB6FdZh9TUrfkoLk7OKggj0aQDXzkfzuFcw
+
+###GET CATEGORY BY ID
+GET http://localhost:4001/categories/696fa4aa-412b-42b6-a89a-0e93b2530731
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk1MDIxNzQsImV4cCI6MTcwOTc2MTM3NH0.XwjOBpGw-rIo4BMJ0OdbTSh9OYwZ1ODXfcF8-u7EQ5k
+
+###UPDATE CATEGORY
+PUT http://localhost:4001/categories/update/d4f744c1-e1bd-4d00-a6d8-83132e2cea82
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDkxMjkzNTgsImV4cCI6MTcwOTM4ODU1OH0.SRseUW-7KB6FdZh9TUrfkoLk7OKggj0aQDXzkfzuFcw
+
+
+{
+     "name": "Electronics",
+    "description": "Surges"   
+    
+}
+
+###DELETE CATEGORY
+DELETE http://localhost:4001/categories/d4f744c1-e1bd-4d00-a6d8-83132e2cea82
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDkxMjkzNTgsImV4cCI6MTcwOTM4ODU1OH0.SRseUW-7KB6FdZh9TUrfkoLk7OKggj0aQDXzkfzuFcw

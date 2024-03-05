@@ -1,0 +1,30 @@
+<div id="header">
+    <div class="header-logo">
+      <a ><img src="../../../assets/images/logo (3).png" alt="" style="width:140px; height:37px"></a>
+    </div>
+    <div *ngIf="loggedIn" class="container">
+      <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Search...">
+      </div>
+    </div>
+    <div class="header-list">
+
+      <nav class="header-list-nav">
+        <ul>
+
+          <li><a class="active" routerLink = "/home">Home</a></li>
+      
+
+          <li ><a routerLink = "/login" *ngIf="!loggedIn">Login</a></li>
+          <li><a routerLink="/registration" *ngIf="!loggedIn">Register</a></li>
+          <li><a routerLink="/home" *ngIf="loggedIn" (click)="logoutUser()">Logout</a></li>
+
+        </ul>
+      </nav>
+      <div class="header-list-icon">
+        <a routerLink = "/cart"><i class="fa fa-bag-shopping"></i></a>
+      </div>
+    </div>
+  </div>
+
+

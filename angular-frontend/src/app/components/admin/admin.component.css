@@ -1,0 +1,71 @@
+main {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ecf0f1;
+  height: 100%;
+  width: 100%;
+  color:white;
+}
+
+.sidebar {
+  background: linear-gradient(to bottom, #278A82 0%, #000000 100%);
+  color: white;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.profile-section {
+  text-align: center;
+  /* margin-bottom: 10px; */
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.profile-section h3 {
+  margin: 30px 0;
+}
+
+.sidebar-content a {
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+
+.sidebar-content a i {
+  padding-right: 30px; /* Spacing between icon and text */
+}
+
+.active, .sidebar-content a:hover {
+  background-color: #2c3e50;
+}
+
+.main-content {
+  margin-left: 250px;
+  margin-top: 50px; /* Assuming navbar is 50px */
+  padding: 20px;
+  background-color: #ecf0f1;
+  min-height: calc(100vh - 100px); /* Adjusted for navbar and footer height */
+  padding-bottom: 50px; /* Assuming footer is 50px */
+}
+.contents{
+  color:white;
+}
+#icon{
+  margin-right:10px;
+  margin-bottom: 10px;
+}

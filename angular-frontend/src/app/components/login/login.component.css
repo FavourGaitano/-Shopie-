@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-color: #f0f0f0;
+  }
+
+  .login-container {
+    display: flex;
+    width: 70%;
+    max-width: 800px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-shadow: 20px 20px 21px #9b9b9b, -20px -20px 21px #ffffff;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.8); /* Use rgba to set a transparent background */
+    backdrop-filter: blur(5px); /* Apply a slight blur for a frosted glass effect */
+  }
+
+  .image {
+    flex: 1;
+  }
+
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+.formcontainer {
+  flex: 1;
+  padding: 20px;
+
+  border-radius: 15px; /* Adjust border-radius for a smoother look */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+  .formcontainer h2 {
+    margin-top: 0;
+  }
+
+  .formcontainer form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .formcontainer label {
+    margin-bottom: 5px;
+  }
+
+  .formcontainer input {
+    margin-bottom: 10px;
+    padding: 10px;
+
+    border-color: 0.7px solid rgba(0, 0, 0, 0.096);
+    border-radius: 5px;
+    margin-top: 4px;
+  }
+
+.formcontainer button {
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: larger;
+  transition: background-color 0.3s ease;
+}
+
+.formcontainer button:hover {
+  background-color: #45a049;
+}
+
+  div {
+    width: 100%;
+    margin: 2px;
+
+  }
+
+  /* Styling for the error message div */
+  .error-message {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 2px;
+  }
+
+  .success{
+    background-color: #45a049;
+    width: 240px;
+    height: 70px;
+    color:white;
+    text-align: center;
+    padding: 14px;
+    font-weight: bolder;
+
+
+  }

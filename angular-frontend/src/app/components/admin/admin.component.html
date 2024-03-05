@@ -1,0 +1,20 @@
+<div class="main">
+  <div class="sidebar">
+      <div class="sidebar-content">
+          <div class="profile-section">
+              <!-- <img src="path_to_admin_avatar.jpg" alt="Admin" class="profile-image"> -->
+              <h3>.</h3>
+          </div >
+          <div class="contents" style="color:white;" >
+            <a  routerLink="dashboard"  style="color:white;" href="#"><i id ="icon" class="fas fa-tachometer-alt"></i>Dashboard</a>
+            <a routerLink="view-users" style="color:white;" href="#" ><i id ="icon" class="fas fa-users"></i>Users</a>
+            <a routerLink="view-products"style="color:white;"  href="#"><i id ="icon" class="fas fa-box-open"></i>Products</a>
+            <a  routerLink="view-categories" style="color:white;" href="#"><i id ="icon" class="fas fa-tags"></i>Categories</a>
+            <a routerLink="view-orders" style="color:white;" href="#"><i id ="icon" class="fas fa-shopping-cart"></i>Orders</a>
+          </div>
+      </div>
+  </div>
+  <div class="main-content">
+       <router-outlet></router-outlet>
+  </div>
+</div>

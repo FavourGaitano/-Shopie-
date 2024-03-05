@@ -1,0 +1,43 @@
+### CREATE USER
+
+POST http://localhost:4001/users
+Content-Type: application/json
+
+{
+    "name": "Favour Andabwa",
+    "email": "favour2@gmail.com",
+    "phone_no": "07046658508",
+    "password": "123456"
+    
+}
+
+###GET ALL USERS
+GET http://localhost:4001/users
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0NzUyNjAsImV4cCI6MTcwOTczNDQ2MH0.N58GM2_pdV3m66YpGtBEKXBOmuFj1HIHfzC-__MirOI
+
+###GET USER BY ID
+GET http://localhost:4001/users/8132b086-9159-4b66-acb0-f1bd8f9141bb
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0NzUyNjAsImV4cCI6MTcwOTczNDQ2MH0.N58GM2_pdV3m66YpGtBEKXBOmuFj1HIHfzC-__MirOI
+
+###UPDATE USER
+PUT http://localhost:4001/users/11614117-f509-4693-91b8-5b230ce3420d
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0NzUyNjAsImV4cCI6MTcwOTczNDQ2MH0.N58GM2_pdV3m66YpGtBEKXBOmuFj1HIHfzC-__MirOI
+
+{
+    "name": "Jackson Mwadia S",
+    "email": "mwadiajackson@gmail.com",
+    "phone_no": "0722559750",
+    "password": "123456"
+    
+}
+
+
+###DELETE USER
+DELETE http://localhost:4001/users/2ac0ab9f-c91e-4376-bd59-a496e46ed202
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0NzA3ODMsImV4cCI6MTcwOTcyOTk4M30.wU0UZNkXKEdLD_wEmtnKnGKCbQorG9mJxfjnXA0WK4s
+
+

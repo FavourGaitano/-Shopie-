@@ -1,0 +1,126 @@
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items:  flex-start;;
+  height: calc(100vh - 100px);
+  padding-top: 100px;
+}
+
+.form-container {
+  margin-top:50px;
+  width: 40%;
+  height:100%;
+  margin: 50px auto;
+  background: linear-gradient(#212121, #212121) padding-box,
+              linear-gradient(145deg, transparent 35%,#278A82, #40c9ff) border-box;
+  border: 3px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background-size: 200% 100%;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.form-container button:active {
+  scale: 0.95;
+}
+
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #717171;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.form-container .form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #414141;
+  font-family: inherit;
+}
+
+.form-container .form-group input:focus,
+.form-group select {
+  outline: none;
+  border-color: #278A82;
+}
+
+.form-container .form-submit-btn {
+  font-family: inherit;
+  color: #fff;
+  background: #313131;
+  border: 1px solid #414141;
+  padding: 12px 16px;
+  font-size: inherit;
+  cursor: pointer;
+  border-radius: 6px;
+  align-self: center;
+}
+
+.form-container .form-submit-btn:hover {
+  background-color: #fff;
+  color: #313131;
+  border-color: #fff;
+  margin: 8px auto 0;
+}
+
+.success-message {
+  color: #38a169;
+  background-color: #f0fff4;
+  border: 1px solid #c6f6d5;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
+  display: block;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error-message {
+  color: #e53e3e;
+  background-color: #fff5f5;
+  border: 1px solid #fed7d7;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
+  display: block;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
