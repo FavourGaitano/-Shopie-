@@ -40,6 +40,7 @@ export class LoginComponent {
 
           if (loginResponse.token) {
             localStorage.setItem('authToken', loginResponse.token);
+            this.auth.triggerLoginStateCheck();
             this.auth.readToken(
               (tokenResponse) => {
 

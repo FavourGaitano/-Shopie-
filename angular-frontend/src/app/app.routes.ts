@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
@@ -16,10 +17,11 @@ import { UpdateCategoryComponent } from './components/update-category/update-cat
 import { UserComponent } from './components/user/user.component';
 import { ViewOneProductComponent } from './components/view-one-product/view-one-product.component';
 import { ViewOrdersComponent } from './components/view-orders/view-orders.component';
+import { PageNotfoundComponent } from './components/page-notfound/page-notfound.component';
 
 export const routes: Routes = [
 
-    { path: 'admin', component: AdminComponent, children:[
+    { path: 'admin', component: AdminComponent, canActivate: [AuthGuard],children:[
       {path: 'view-users', component: ViewUsersComponent},
       {path: 'dashboard', component: DashboardComponent},
       {path: 'update-user/:user_id', component: UpdateUserComponent},
@@ -34,10 +36,10 @@ export const routes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'registration', component: RegisterComponent},
     { path: 'login', component: LoginComponent},
-    { path: 'user', component: UserComponent},
-    { path: 'view-one-product', component: ViewOneProductComponent},
+    { path: 'user', component: UserComponent, canActivate: [AuthGuard]},
+    { path: 'view-one-product', component: ViewOneProductComponent,canActivate: [AuthGuard]},
 
     { path: 'home', component: HomeComponent},
-    // {path:'**', component: PageNotfoundComponent},
-    { path: 'cart', component: ShoppingCartComponent},
+    { path: 'cart', component: ShoppingCartComponent, canActivate: [AuthGuard]},
+    {path:'**', component: PageNotfoundComponent},
 ];
