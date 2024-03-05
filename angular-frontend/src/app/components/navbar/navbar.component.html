@@ -17,10 +17,11 @@
           <li><a >Blog</a></li>
           <li><a>About</a></li>
           <li><a>Contact Us</a></li>
-          <li ><a routerLink = "/user">User</a></li>
-          <li ><a routerLink = "/login">Login</a></li>
-          <li><a routerLink = "/registration">Register</a></li>
-          <li><a>Logout</a></li>
+       
+          <li ><a routerLink = "/login" *ngIf="!isLoggedIn">Login</a></li>
+          <li><a routerLink="/registration" *ngIf="!isLoggedIn">Register</a></li>
+          <li><a routerLink="/home" *ngIf="isLoggedIn">Logout</a></li>
+
         </ul>
       </nav>
       <div class="header-list-icon">
