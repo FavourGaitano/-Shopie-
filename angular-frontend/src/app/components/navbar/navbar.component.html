@@ -2,7 +2,7 @@
     <div class="header-logo">
       <a ><img src="../../../assets/images/logo (3).png" alt="" style="width:140px; height:37px"></a>
     </div>
-    <div class="container">
+    <div *ngIf="loggedIn" class="container">
       <div class="search-container">
         <input type="text" class="search-bar" placeholder="Search...">
       </div>
