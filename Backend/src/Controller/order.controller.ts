@@ -57,12 +57,12 @@ export const getAllOrders = async(req:Request, res: Response)=>{
     try {
 
 
-        let products = (await Connection.execute("getAllOrders")).recordset
+        let orders = (await Connection.execute("getAllOrders")).recordset
         
 
-        if(products.length > 0){
+        if(orders.length > 0){
             return res.json({
-                products
+                orders
             })
         }else{
             return res.json({

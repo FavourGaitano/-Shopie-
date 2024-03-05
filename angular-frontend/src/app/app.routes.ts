@@ -15,6 +15,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { UpdateCategoryComponent } from './components/update-category/update-category.component';
 import { UserComponent } from './components/user/user.component';
 import { ViewOneProductComponent } from './components/view-one-product/view-one-product.component';
+import { ViewOrdersComponent } from './components/view-orders/view-orders.component';
 
 export const routes: Routes = [
 
@@ -27,14 +28,15 @@ export const routes: Routes = [
       {path: 'update-product/:product_id', component: UpdateProductComponent},
       {path: 'view-categories', component: ViewCategoriesComponent},
       {path: 'categories', component: CategoriesComponent},
-      {path: 'update-category/:category_id', component: UpdateCategoryComponent}
+      {path: 'update-category/:category_id', component: UpdateCategoryComponent},
+      {path: 'view-orders', component: ViewOrdersComponent},
     ]},
     { path: '', component: HomeComponent},
     { path: 'registration', component: RegisterComponent},
     { path: 'login', component: LoginComponent},
     { path: 'user', component: UserComponent},
     { path: 'view-one-product', component: ViewOneProductComponent},
-    
+
     { path: 'home', component: HomeComponent},
     // {path:'**', component: PageNotfoundComponent},
     { path: 'cart', component: ShoppingCartComponent},

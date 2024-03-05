@@ -5,8 +5,8 @@ Content-Type: application/json
 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk1OTY4MzIsImV4cCI6MTcwOTg1NjAzMn0.AQeAgxaFcxe7n6XM0Qw4K3HfHvzJiV-6gqnKALOfKe0
 
 {
-    "user_id": "2c5d360a-00b4-4d60-80b3-d265609afff2",
-    "product_id": "e567250a-340c-4ff3-9480-d7efa33f3fe6",
+    "user_id": "8ac1792b-2694-4793-93ed-2c2da3e6fc55",
+    "product_id": "28b5a782-a065-4a0d-8e5b-549cba4d36b6",
     "quantity": 10
     
     
