@@ -4,6 +4,7 @@ import {register} from '../interfaces/register.interfaces';
 import {login} from '../interfaces/login.interfaces'
 import{Product} from '../interfaces/products.interfaces'
 import { Category } from '../interfaces/categories.interface';
+import { Cart } from '../interfaces/cart.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -50,6 +51,11 @@ export class AuthService {
   createCategory(category_details:Category){
 
     return this.http.post<{message:string, error:string}>('http://localhost:4001/categories', category_details)
+  }
+
+  createCart(cart_details:Cart){
+
+    return this.http.post<{message:string, error:string}>('http://localhost:4001/cart', cart_details)
   }
 
   isLoggedIn(): boolean {

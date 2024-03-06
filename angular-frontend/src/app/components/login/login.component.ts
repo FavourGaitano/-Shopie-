@@ -40,7 +40,6 @@ export class LoginComponent {
 
           if (loginResponse.token) {
             localStorage.setItem('authToken', loginResponse.token);
-            this.auth.triggerLoginStateCheck();
             this.auth.readToken(
               (tokenResponse) => {
 
@@ -52,6 +51,7 @@ export class LoginComponent {
                   setTimeout(() => this.router.navigate(['user']), 2000);
 
                 }
+                this.auth.triggerLoginStateCheck();
               },
               (error) => {
                 console.error("Error fetching user details with token", error);

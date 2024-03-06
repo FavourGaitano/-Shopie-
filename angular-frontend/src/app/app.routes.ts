@@ -36,10 +36,10 @@ export const routes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'registration', component: RegisterComponent},
     { path: 'login', component: LoginComponent},
-    { path: 'user', component: UserComponent, canActivate: [AuthGuard]},
-    { path: 'view-one-product', component: ViewOneProductComponent,canActivate: [AuthGuard]},
+    { path: 'user', component: UserComponent, canActivate: [AuthGuard], children:[]},
+    { path: 'view-one-product/:product_id', component: ViewOneProductComponent,canActivate: [AuthGuard]},
 
     { path: 'home', component: HomeComponent},
-    { path: 'cart', component: ShoppingCartComponent, canActivate: [AuthGuard]},
+    { path: 'shopping-cart', component: ShoppingCartComponent, canActivate: [AuthGuard]},
     {path:'**', component: PageNotfoundComponent},
 ];

@@ -15,7 +15,7 @@ body{
     margin: 0 auto;
     margin-top: 30px;
     padding-right: 79px;
-    
+
 }
 
 
@@ -31,7 +31,7 @@ body{
     display: flex;
     flex-direction: row;
     margin-left: 100px;
-    
+
 }
 .content{
     margin-top: 20px;
@@ -127,7 +127,7 @@ body{
     color: rgb(219, 207, 207);
     stroke:2px;
     margin-bottom: 40px;
-   
+
 }
 
 .addcart>span{
@@ -142,7 +142,7 @@ body{
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    
+
 }
 
 .addcart>span{
@@ -156,7 +156,7 @@ body{
     align-items: center;
 }
 .description >.add{
-   
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,7 +173,7 @@ body{
     color: white;
     padding: 20px;
     cursor: pointer;
-    
+
 }
 .additem:hover{
     background-color: rgb(7, 51, 7);
@@ -183,7 +183,7 @@ body{
 }
 .additem>img{
     margin-right: 13px;
-    
+
 }
 .sneakers{
     margin-right: 80px;
@@ -205,5 +205,30 @@ body{
 }
 .price{
     margin-top: 3px;
+}
+.success-message {
+  margin-top:10rem;
+  color: #38a169;
+  background-color: #f0fff4;
+  border: 1px solid #c6f6d5;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
+  display: block;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.error-message {
+  color: #e53e3e;
+  background-color: #fff5f5;
+  border: 1px solid #fed7d7;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
+  display: block;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 

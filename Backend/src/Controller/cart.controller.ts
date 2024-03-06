@@ -25,19 +25,19 @@ export const createCart = async (req: Request, res: Response) => {
       .input('user_id', mssql.VarChar, user_id)
       .execute("CheckCartExists")
 
-    console.log("Your result", result.recordset.length);
-
-    if (result.recordset.length >= 1) {
-      // Before adding product, check if the product exists in the cart
-      const productCheck = await pool
+      
+      if (result.recordset.length >= 1) {
+        // Before adding product, check if the product exists in the cart
+        const productCheck = await pool
         .request()
         .input('cart_id', mssql.VarChar, result.recordset[0].cart_id)
         .input('product_id', mssql.VarChar, product_id)
         .execute('CheckProductInCart');
+        console.log("Your result jgfdg", productCheck.recordset.length);
 
       // If product exists in the cart, return a message to update quantity
       if (productCheck.recordset.length > 0) {
-        return res.status(400).json({ message: "Product exists in cart, please update quantity." });
+        return res.status(201).json({ message: "Product exists in cart, please update quantity." });
       } else {
         
         const addProductToCart = await pool
