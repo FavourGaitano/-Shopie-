@@ -49,8 +49,10 @@
 </body> -->
 
 <body>
+
   <div *ngIf="successMessage" class="success-message">{{successMessage}}</div>
   <div class="main">
+    <button routerLink="/user" style="width: 70px; background-color: green; padding: 10px;color: white;">Back</button>
     <div class="content" *ngIf="product">
       <div class="images">
         <div class="largeimg">
@@ -83,7 +85,7 @@
           </div>
           <div class="additem">
             <div class="additem">
-              <a routerLink="/shopping-cart" style="color: white; display: flex; gap: 4px" (click)="createCartNow(product.product_id)">
+              <a style="color: white; display: flex; gap: 4px" (click)="createCartNow(product.product_id)">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <h4 style="color: white">Add to cart</h4>
               </a>

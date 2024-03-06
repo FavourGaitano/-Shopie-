@@ -78,8 +78,8 @@
       <p style="margin-left: 100px;">Summer Collection New Morden Design</p>
 
       <div class="pro-collection">
-        <div class="display" style=" display:flex; flex-direction:row; gap:10px; justify-content:center">
-          <div *ngFor="let product of paginatedProducts" class="product-cart">
+        <div  class="display" style=" display:flex; flex-direction:row; gap:10px; justify-content:center">
+          <div *ngFor="let product of paginatedProducts" class="product-cart"routerLink="/view-one-product/{{product.product_id}}">
               <img style="height:270px;" src="{{ product.image }}" alt="{{ product.name }}" />
               <span>{{ product.CategoryName }}</span>
               <h4>{{ product.name }}</h4>
@@ -93,7 +93,7 @@
               <h4 class="price">Ksh.{{product.price}}</h4>
 
               <!-- <div *ngFor="let product of productsArr"> -->
-                <a routerLink="/view-one-product/{{product.product_id}}">
+                <a >
                   <i class="fa-solid fa-cart-shopping buy-icon"></i>
                 </a>
               <!-- </div> -->

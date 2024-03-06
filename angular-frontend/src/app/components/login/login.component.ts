@@ -45,7 +45,7 @@ export class LoginComponent {
 
                 if (tokenResponse.info.role === 'admin') {
                   this.successMessage = 'Login successful. Redirecting to admin...';
-                  setTimeout(() => this.router.navigate(['admin']), 2000);
+                  setTimeout(() => this.router.navigate(['admin/view-products']), 2000);
                 } else if (tokenResponse.info.role === 'user') {
                   this.successMessage = 'Login successful.';
                   setTimeout(() => this.router.navigate(['user']), 2000);
