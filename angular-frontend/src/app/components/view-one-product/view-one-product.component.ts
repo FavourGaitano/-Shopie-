@@ -80,6 +80,8 @@ export class ViewOneProductComponent implements OnInit, OnDestroy {
           next: (response) => {
             this.successMessage = response.message;
             console.log('Cart created successfully:', response);
+            
+
           },
           error: (error) => {
             this.errorMessage = 'You have already created a cart.';

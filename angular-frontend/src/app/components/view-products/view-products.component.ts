@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
 })
 export class ViewProductsComponent {
 
+  imgUrl!:string
+
   productsArr: any[] = [];
   successMessage: string = '';
   errorMessage: string = '';

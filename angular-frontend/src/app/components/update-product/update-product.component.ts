@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
 import { Product } from '../../interfaces/products.interfaces';
 import { CategoriesService } from '../../services/categories.service';
@@ -9,7 +9,7 @@ import { CategoriesService } from '../../services/categories.service';
 @Component({
   selector: 'app-update-product',
   standalone: true,
-  imports: [FormsModule, CommonModule, ReactiveFormsModule],
+  imports: [FormsModule, CommonModule, ReactiveFormsModule, RouterLink, RouterOutlet],
   templateUrl: './update-product.component.html',
   styleUrl: './update-product.component.css'
 })
@@ -21,6 +21,10 @@ export class UpdateProductComponent {
   updateProductForm!:FormGroup
   id!: string
   product!:Product
+
+
+  imageUpload:any[] = []
+  imgUrl!: any
 
   constructor(private fb: FormBuilder, private route:ActivatedRoute, private productsService: ProductsService, private categories: CategoriesService){
 
@@ -42,6 +46,8 @@ export class UpdateProductComponent {
   this.fetchCategories();
 
 }
+
+uploadImage(event: any): void{}
 
   getProductId(){
     this.route.params.subscribe(res=>{

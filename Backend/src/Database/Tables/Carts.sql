@@ -16,3 +16,5 @@ CREATE TABLE Cart (
 ALTER TABLE Cart
 ADD cart_primary_key INT IDENTITY(1,1) PRIMARY KEY;
 
+
+

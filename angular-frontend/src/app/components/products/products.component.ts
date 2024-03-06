@@ -18,6 +18,8 @@ export class ProductsComponent {
   successMessage: string = '';
   errorMessage: string = '';
 
+  imgUrl: string | null = null
+
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthService,private categories: CategoriesService ) {
     this.ProductsForm = this.fb.group({
 
@@ -29,6 +31,50 @@ export class ProductsComponent {
       category_id: ['', [Validators.required]]
 
     })
+
+  }
+
+  async uploadImage(event: any){
+
+    const target = event.target
+    const files = target.files
+    if(files){
+        console.log(files)
+        const formData = new FormData()
+        formData.append("file", files[0])
+        formData.append("upload_preset", "shopie")
+        formData.append("cloud_name", "dr8ec6cww")
+
+
+        // formData.forEach((dataItem)=>{
+        //   console.log(dataItem);
+        //   console.log(dataItem);
+        //   this.imageUpload.push(dataItem)
+
+          console.log(formData);
+
+
+
+          await fetch('https://api.cloudinary.com/v1_1/dr8ec6cww/image/upload', {
+            method: "POST",
+            body: formData
+          }).then(
+            (res:any) => {
+
+              return res.json()
+            },
+
+          ).then(data=>{
+            console.log("this is the URL",data.url);
+            this.ProductsForm.get('image')?.setValue(data.url)
+            return data.url = this.imgUrl;
+
+          }
+          );
+
+
+
+    }
 
   }
 

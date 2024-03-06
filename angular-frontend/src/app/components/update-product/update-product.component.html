@@ -10,11 +10,24 @@
       <div *ngIf="updateProductForm.get('name')?.invalid && updateProductForm.get('name')?.touched" class="error-message">Name is required</div>
     </div>
 
+
     <div class="form-group">
-      <label for="image">Image</label>
-      <input type="text" formControlName="image" id="image" required>
-      <div *ngIf="updateProductForm.get('image')?.invalid && updateProductForm.get('image')?.touched && !updateProductForm.get('image')?.dirty" class="error-message">Image is required</div>
+      <label for="image">Image:</label>
+      <input
+      [value]="product.image"
+        type="file"
+        #fileInput
+        id="fileInput"
+        name="productImage"
+        formControlName="image"
+        accept="image/*"
+        required
+        (change)="uploadImage($event)"
+      />
+      <div *ngIf="updateProductForm.get('image')?.invalid && updateProductForm.get('image')?.touched" class="error-message">Image is required</div>
     </div>
+
+
 
     <div class="form-group">
       <label for="descr">Description</label>
