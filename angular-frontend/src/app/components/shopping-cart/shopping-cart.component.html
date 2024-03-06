@@ -2,106 +2,47 @@
 
 
 
-  <div class="container">
-      <button routerLink="/user"><i class="fa-solid fa-arrow-left"></i></button>
 
-      <h1>Shopping Cart</h1>
+  <button class="btn-donate">Checkout</button>
 
-      <div class="cart">
+  <div class="cart">
 
-          <div class="products">
 
-              <div class="product">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Image</th>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartArr; let i = index">
+          <!-- <td>{{ item.id }}</td> -->
+          <td class="td-custom">{{i+1}}</td>
+          <td><img src="{{ item.image }}" alt="Product Image" width=300;></td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}</td>
+          <td><input type="number" [value]="item.quantity" min="0" style="font-size: 22px;"></td>
+          <td>
+            <button class="action-btn" (click)="deleteItemCart(item.cart_id, item.product_id)">Remove</button>
 
-                  <img src="../../../assets/images/products/f3.jpg">
 
-                  <div class="product-info">
+            <!-- (click)="removeItem(i)" -->
+          </td>
+        </tr>
 
-                      <h3 class="product-name">New Shoes</h3>
+      </tbody>
 
-                      <h4 class="product-price">Ksh. 1,000</h4>
-
-                      <h4 class="product-offer">50%</h4>
-
-                      <p class="product-quantity" >Qnt: <input style="margin-bottom:34px" value="1" name="">
-
-                      <p class="product-remove">
-
-                          <i class="fa fa-trash" aria-hidden="true"></i>
-
-                          <span class="remove">Remove</span>
-
-                      </p>
-
-                  </div>
-
-              </div>
-
-              <div class="product">
-
-                  <img src="https://images.pexels.com/photos/8365688/pexels-photo-8365688.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" >
-
-                  <div class="product-info">
-
-                      <h3 class="product-name">New Bag</h3>
-
-                      <h4 class="product-price">Ksh. 2,000</h4>
-
-                      <h4 class="product-offer">40%</h4>
-
-                      <p class="product-quantity">Qnt: <input value="1" name="">
-
-                      <p class="product-remove" >
-
-                          <i class="fa fa-trash" aria-hidden="true"></i>
-
-                          <span class="remove">Remove</span>
-
-                      </p>
-
-                  </div>
-
-              </div>
-
-          </div>
-
-          <div class="cart-total">
-
-              <p>
-
-                  <span style="border-bottom: 1px solid;">Total Price:</span>
-
-                  <span style="font-weight: bold;">Ksh. 3,000</span>
-
-              </p>
-
-              <p>
-  <!--
-                  <span>Number of Items</span>
-
-                  <span>2</span> -->
-
-              </p>
-
-              <p>
-
-                  <span>You Save</span>
-
-                  <span>Ksh. 1,000</span>
-
-              </p>
-
-              <a >Proceed to Checkout</a>
-
-          </div>
-
-      </div>
-
+    </table>
   </div>
+
 
 
 
   </body>
 
 
- 
