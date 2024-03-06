@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart.service';
 import { AuthService } from '../../services/auth.service';
 import { OneUsercartResponse } from '../../interfaces/cartResponse.interface';
+import { deleteItemCart } from '../../interfaces/cart.interface';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -65,6 +66,32 @@ export class ShoppingCartComponent implements OnInit {
       (error) => console.error('Error decoding token:', error)
     );
   }
+
+  deleteItemCart(id: string, product_id:string) {
+    console.log('delete Item function called with id:', id);
+
+
+    const details: deleteItemCart = {
+      cart_id:id,
+      product_id
+    };
+
+    this.cartService.deleteItemCart(id, details).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.fetchCart();
+        this.successMessage = 'Product removed successfully.';
+        this.errorMessage = '';
+
+      },
+      error: (error) => {
+        console.error(error);
+        this.errorMessage = 'Failed to remove the product. Please try again.';
+        this.successMessage = '';
+      }
+    });
+  }
+
 
 
 
