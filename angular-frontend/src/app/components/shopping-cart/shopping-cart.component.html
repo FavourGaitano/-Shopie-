@@ -3,9 +3,10 @@
 
 
 
-  <button class="btn-donate">Checkout</button>
+
 
   <div class="cart">
+    <div *ngIf="successMessage" class="success-message">{{successMessage}}</div>
 
 
     <table>
@@ -33,12 +34,19 @@
 
             <!-- (click)="removeItem(i)" -->
           </td>
+          <button class="btn-donate"(click)="checkoutCart(item.cart_id)">Checkout</button>
         </tr>
+
+
 
       </tbody>
 
     </table>
+
+    <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
   </div>
+
+
 
 
 

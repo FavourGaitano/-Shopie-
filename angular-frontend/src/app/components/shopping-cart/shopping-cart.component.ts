@@ -47,7 +47,7 @@ export class ShoppingCartComponent implements OnInit {
               this.cartArr = OneUsercartResponse.cartDetails || []
               if (OneUsercartResponse.cartDetails) {
 
-                this.successMessage = 'Cart loaded successfully';
+                // this.successMessage = 'Cart loaded successfully';
 
 
 
@@ -91,6 +91,34 @@ export class ShoppingCartComponent implements OnInit {
       }
     });
   }
+
+  checkoutCart(id: string) {
+
+    console.log('checkout function called with id:', id);
+
+
+    this.cartService. checkoutCart(id).subscribe({
+      next: (res) => {
+        console.log(res);
+        if(res.message){
+          this.fetchCart();
+          this.successMessage = res.message;
+        }
+        else{
+          this.errorMessage = 'Trouble checking out the cart. Please try again.';
+        }
+      },
+      error: (error) => {
+        console.error(error);
+        this.errorMessage = 'Failed to check out the cart. Please try again.';
+        this.successMessage = '';
+      }
+
+    });
+
+
+  }
+
 
 
 

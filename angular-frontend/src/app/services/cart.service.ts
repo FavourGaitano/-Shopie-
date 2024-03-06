@@ -37,4 +37,15 @@ export class CartService {
 
     return this.http.request(req);
   }
+
+  checkoutCart(id:string){
+    const token = localStorage.getItem('authToken') as string
+
+    return this.http.put<{message:string}>(`http://localhost:4001/cart/checkout/${id}`, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+         token
+      })
+    })
+  }
 }
