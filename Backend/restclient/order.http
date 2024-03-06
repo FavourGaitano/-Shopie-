@@ -1,0 +1,33 @@
+### CREATE ORDER
+
+POST http://localhost:4001/order
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk1OTY4MzIsImV4cCI6MTcwOTg1NjAzMn0.AQeAgxaFcxe7n6XM0Qw4K3HfHvzJiV-6gqnKALOfKe0
+
+{
+    "cart_id": "627bcfac-78b1-4ab6-9ac5-bafc14e3d76a",
+    "user_id": "2c5d360a-00b4-4d60-80b3-d265609afff2"
+   
+    
+    
+}
+
+###GET ALL ORDERS
+GET http://localhost:4001/order
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0OTIyNTcsImV4cCI6MTcwOTc1MTQ1N30.vVmoLh3GdSmHF7kLwraj819KnARolbcYQG9hBwuQLPw
+
+###GET ORDERS BY USER ID
+GET http://localhost:4001/order/userID/11614117-f509-4693-91b8-5b230ce3420d
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0OTIyNTcsImV4cCI6MTcwOTc1MTQ1N30.vVmoLh3GdSmHF7kLwraj819KnARolbcYQG9hBwuQLPw
+
+###CANCEL ORDER
+DELETE http://localhost:4001/order/46cb1718-ed93-4c70-be99-f39285adee42
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0OTIyNTcsImV4cCI6MTcwOTc1MTQ1N30.vVmoLh3GdSmHF7kLwraj819KnARolbcYQG9hBwuQLPw
+
+###CHANGE ORDER STATUS
+POST http://localhost:4001/order/3cdc0dab-d4e0-4067-ad18-50578bf0f5cb
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0OTIyNTcsImV4cCI6MTcwOTc1MTQ1N30.vVmoLh3GdSmHF7kLwraj819KnARolbcYQG9hBwuQLPw

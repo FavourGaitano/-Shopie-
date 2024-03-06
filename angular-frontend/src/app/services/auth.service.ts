@@ -10,6 +10,8 @@ import { Category } from '../interfaces/categories.interface';
 })
 export class AuthService {
 
+
+
   constructor(private http:HttpClient) { }
 
   registerUser(user_details:register ){
@@ -49,4 +51,14 @@ export class AuthService {
 
     return this.http.post<{message:string, error:string}>('http://localhost:4001/categories', category_details)
   }
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('authToken');
+  }
+
+  logoutUser() {
+    localStorage.removeItem('authToken');
+  }
+
+  triggerLoginStateCheck() {}
 }

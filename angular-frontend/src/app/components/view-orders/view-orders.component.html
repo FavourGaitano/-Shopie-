@@ -1,0 +1,35 @@
+<div class="main">
+  <div *ngIf="successMessage" class="success-message">{{successMessage}}</div>
+  <div>
+    <table class="table-custom">
+      <tr class="th-custom">
+        <th style="padding-left:15px;">No.</th>
+        <th>User</th>
+        <th>Order Created At</th>
+        <th>Status</th>
+        <th>Products</th>
+        <th>Quantities</th>
+        <th>Total Price</th>
+        <th>Actions</th>
+      </tr>
+      <tr *ngFor="let order of ordersArr; let i = index" class="tr-custom">
+        <td class="td-custom">{{i+1}}</td>
+        <td class="td-custom">{{order.user_name}}</td>
+        <td class="td-custom">{{order.order_created_at| date:'fullDate'}}</td>
+        <td class="td-custom">{{order.status}}</td>
+        <td class="td-custom">{{order.product_names}}</td>
+        <td class="td-custom">{{order.quantities}}</td>
+        <td class="td-custom">{{order.total_prices}}</td>
+
+
+        <td class="td-custom">
+          <button class="btn-donate" (click)="changeStatus(order.order_id)"> Change Status</button>
+        </td>
+
+      </tr>
+
+    </table>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
+
+</div>

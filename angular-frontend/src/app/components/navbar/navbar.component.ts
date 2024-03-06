@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { RegisterComponent } from '../register/register.component';
 import { LoginComponent } from '../login/login.component';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,5 +13,37 @@ import { CommonModule } from '@angular/common';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  isLoggedIn:any
+  loggedIn: boolean = false;
+
+  public updateLoginState() {
+    this.loggedIn = this.authService.isLoggedIn();
+  }
+
+  constructor(private router: Router, private authService: AuthService) {
+
+  }
+
+  ngOnInit() {
+    this.checkLoginStatus();
+
+    this.authService.triggerLoginStateCheck = () => {
+      this.updateLoginState();
+    };
+
+    this.updateLoginState()
+
+  }
+
+  checkLoginStatus(): void {
+    this.loggedIn = this.authService.isLoggedIn();
+  }
+
+
+
+  logoutUser() {
+    this.authService.logoutUser();
+    this.loggedIn = false;
+    this.router.navigate(['/home']);
+  }
+
 }
