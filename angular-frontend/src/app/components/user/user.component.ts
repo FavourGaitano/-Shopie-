@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { CommonModule } from '@angular/common';
-import { ProductsService } from '../../services/products.service';import { RouterLink } from '@angular/router';
+import { ProductsService } from '../../services/products.service';import { Router, RouterLink } from '@angular/router';
 import { ViewOneProductComponent } from '../view-one-product/view-one-product.component';
 
 
@@ -24,9 +24,12 @@ export class UserComponent {
   errorMessage: string = '';
 
 
-  constructor(private products: ProductsService) {
+  constructor(private products: ProductsService,private router: Router ) {
     this.fetchProducts();
   }
+
+
+
 
   fetchProducts() {
     this.products.getProducts().subscribe((res) => {
@@ -40,6 +43,22 @@ export class UserComponent {
         this.productsArr = res.products
       }
     });
+  }
+
+  navigateToProduct(productId: string): void {
+    this.router.navigate(['/view-one-product', productId]);
+  }
+
+  storeProductIdAndNavigate(event: MouseEvent, product_id: string): void {
+
+    event.preventDefault();
+    console.log('Updating product_id in localStorage:', product_id);
+
+
+    localStorage.setItem('selectedProductId', product_id);
+
+
+    this.router.navigate(['/view-one-product']);
   }
 
   updatePaginatedProducts() {

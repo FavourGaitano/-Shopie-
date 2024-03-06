@@ -26,10 +26,11 @@ export interface OneproductResponse {
       price: string;
       category_id: string;
       quantity:string;
+      CategoryName: string;
     }
   ];
-  error: {
-    name: string;
-    message: string;
-  };
+  // error: {
+  //   name: string;
+  //   message: string;
+  // };
 }

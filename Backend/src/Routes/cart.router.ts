@@ -4,7 +4,7 @@ import { verifyToken } from "../Middlewares/verifyToken";
 
 const cartRouter = Router()
 
-cartRouter.post('/',verifyToken, createCart)
+cartRouter.post('/',createCart)
 cartRouter.get('/' , verifyToken, getallCarts)
 cartRouter.get("/userID/:user_id" , verifyToken, getCartByUserId)
 cartRouter.put("/checkout/:cart_id" , verifyToken, checkoutCart);

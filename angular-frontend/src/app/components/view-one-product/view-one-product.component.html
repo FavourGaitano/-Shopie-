@@ -1,11 +1,11 @@
-<body>
+ <!-- <body>
   <div class="main">
-  
-      <!-- content -->
+
+
     <div class="content">
       <div class="images">
         <div class="largeimg">
-          <img src="https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=600" width="400px" style="margin-right: 10px;">       
+          <img src="https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=600" width="400px" style="margin-right: 10px;">
         </div>
         <div class="small">
           <img src="https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
@@ -15,14 +15,14 @@
       </div>
       <div class="description">
         <div class="desc">  <p style="color: #088178; font-size:large">Clothes company</p></div>
-      
-      
+
+
         <h1 style="font-family: Arial, Helvetica, sans-serif; ">Fall Limited Edition <br>Clothes</h1>
         <p style="font-size: 24px;">These low profile Clothes are your perfect casual wear <br>companion. Featuring a durable shirts outer sole, they'll withstand everything the weather can offer<br> <br></p>
         <div class="price">
           <p style="font-size: large;">Ksh.125.00</p>
           <p class="per">50%</p>
-         
+
         </div>
         <div class="perc"> <s>Ksh.195.00</s></div>
 
@@ -34,18 +34,68 @@
           </div>
           <div class="additem">
           <a   routerLink = "/login" style="color: white; display:flex; gap:4px"> <i class="fa-solid fa-cart-shopping"></i><h4 style="color:white">Add to cart</h4></a>
-            
-            
-    
+
+
+
           </div>
         </div>
-        
+
       </div>
-    
+
     </div>
 
   </div>
-  
+
+</body> -->
+
+<body>
+  <div *ngIf="successMessage" class="success-message">{{successMessage}}</div>
+  <div class="main">
+    <div class="content" *ngIf="product">
+      <div class="images">
+        <div class="largeimg">
+          <img [src]="product.image" alt="{{ product.name }}" width="400px" style="margin-right: 10px;">
+        </div>
+        <div class="small">
+          <img [src]="product.image" alt="">
+          <img [src]="product.image" alt="">
+          <img [src]="product.image" alt="">
+        </div>
+      </div>
+      <div class="description">
+        <div class="desc">
+          <p style="color: #088178; font-size:large">{{ product.CategoryName }}</p>
+        </div>
+        <h1 style="font-family: Arial, Helvetica, sans-serif; ">{{ product.name }}</h1>
+        <p style="font-size: 24px;">{{ product.descr }}</p>
+        <div class="price">
+          <p style="font-size: large;">Ksh.{{ product.price }}</p>
+          <p class="per">50%</p>
+        </div>
+        <div class="perc">
+          <s>Ksh.195.00</s>
+        </div>
+        <div class="add">
+          <div class="addcart">
+            <span>-</span>
+            <span>{{ product.quantity }}</span>
+            <span>+</span>
+          </div>
+          <div class="additem">
+            <div class="additem">
+              <a routerLink="/shopping-cart" style="color: white; display: flex; gap: 4px" (click)="createCartNow(product.product_id)">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h4 style="color: white">Add to cart</h4>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
 </body>
+
+
 
 
