@@ -1,6 +1,7 @@
 export interface OneUsercartResponse {
   cartDetails: [
     {
+      cart_id: string;
       quantity: number;
       product_id: string;
       name: string;
@@ -13,3 +14,21 @@ export interface OneUsercartResponse {
     message: string;
   };
 }
+
+export interface OnecartResponse {
+  cartById: [
+    {
+      product_id?: string;
+      name: string;
+      image: string;
+      price: number;
+      quantity:number;
+      
+    }
+  ];
+  // error: {
+  //   name: string;
+  //   message: string;
+  // };
+}
+

@@ -77,20 +77,28 @@
         <div class="perc">
           <s>Ksh.195.00</s>
         </div>
+        <div class="additem" class="additem" style="width: 100; padding: 20px;">
+          <div style="padding: 20px;" >
+            <a style="color: white; display: flex; gap: 4px; " (click)="createCartNow(product.product_id)">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <h4 style="color: white; ">Add to cart</h4>
+            </a>
+          </div>
+        </div>
         <div class="add">
-          <div class="addcart">
+          <!-- <div class="addcart">
             <span>-</span>
             <span>{{ product.quantity }}</span>
             <span>+</span>
-          </div>
-          <div class="additem">
+          </div> -->
+      <!--     <div class="additem">
             <div class="additem">
-              <a style="color: white; display: flex; gap: 4px" (click)="createCartNow(product.product_id)">
+              <a style="color: white; display: flex; gap: 4px; margin-left: 30px;" (click)="createCartNow(product.product_id)">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <h4 style="color: white">Add to cart</h4>
               </a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

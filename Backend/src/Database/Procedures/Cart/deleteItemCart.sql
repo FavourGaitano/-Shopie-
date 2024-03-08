@@ -6,6 +6,6 @@ BEGIN
     
     UPDATE Cart
     SET isDelete = 1
-    WHERE cart_id = @cart_id AND product_id = @product_id OR quantity= 0;
+    WHERE cart_id = @cart_id AND product_id = @product_id AND isCheckOut=1 OR quantity= 0 ;
 END;
 GO

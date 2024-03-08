@@ -65,7 +65,9 @@ export class ProductsComponent {
             },
 
           ).then(data=>{
+            console.log(data);
             console.log("this is the URL",data.url);
+
             this.ProductsForm.get('image')?.setValue(data.url)
             return data.url = this.imgUrl;
 
@@ -95,6 +97,8 @@ export class ProductsComponent {
           console.log(ProductResponse);
           this.successMessage = 'Product created successfully!';
           this.errorMessage = '';
+
+          this.ProductsForm.reset();
         },
         error: (error) => {
           console.error("Product creation failed", error);

@@ -81,6 +81,9 @@ uploadImage(event: any): void{}
           this.successMessage = "Product updated successfully!";
           this.errorMessage = '';
 
+          this.updateProductForm.reset();
+
+
         },
         error: (error) => {
 

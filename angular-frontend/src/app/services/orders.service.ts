@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ordersResponse } from '../interfaces/ordersResponse.interface';
+import { OneUserordersResponse } from '../interfaces/ordersResponse.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,17 @@ export class OrdersService {
       headers: new HttpHeaders({
         'Content-type': 'application/json',
          token
+      })
+    })
+  }
+
+  getUserOrder(id:string){
+    const token = localStorage.getItem('authToken') as string
+
+    return this.http.get<OneUserordersResponse>(` http://localhost:4001/order/userID/${id}`, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        token
       })
     })
   }

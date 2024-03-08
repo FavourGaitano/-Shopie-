@@ -6,8 +6,8 @@
     padding: 75px;
     background-color: #ececec;
   }
-  #footer div{
-  }
+  /* #footer div{
+  } */
   #footer p, #footer a{
     color: rgb(109, 109, 109);
     text-decoration: none;
@@ -27,10 +27,10 @@
     border: 1px solid #08817969;
     border-radius: 7px;
   }
-  
+
 
   @media only screen and (max-width: 370px){
-    
+
 #footer{
   display: flex;
   align-items:flex-start;

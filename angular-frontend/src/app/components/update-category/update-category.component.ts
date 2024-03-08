@@ -61,6 +61,8 @@ export class UpdateCategoryComponent {
           this.successMessage = "Category updated successfully!";
           this.errorMessage = '';
 
+          this.updateCategoryForm.reset();
+
         },
         error: (error) => {
 

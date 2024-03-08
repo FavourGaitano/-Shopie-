@@ -21,12 +21,16 @@
           <li ><a routerLink = "/login" *ngIf="!loggedIn">Login</a></li>
           <li><a routerLink="/registration" *ngIf="!loggedIn">Register</a></li>
           <li><a routerLink="/home" *ngIf="loggedIn" (click)="logoutUser()">Logout</a></li>
+          <li><a routerLink="/orders" *ngIf="loggedIn">Orders</a></li>
+
+
 
         </ul>
       </nav>
       <div *ngIf="loggedIn" class="header-list-icon">
         <a routerLink = "/shopping-cart"><i class="fa fa-bag-shopping"></i></a>
       </div>
+
     </div>
   </div>
 

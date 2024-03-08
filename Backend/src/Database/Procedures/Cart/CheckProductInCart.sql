@@ -5,5 +5,5 @@ AS
 BEGIN
     SELECT  *
     FROM Cart
-    WHERE cart_id = @cart_id AND product_id = @product_id
+    WHERE cart_id = @cart_id AND product_id = @product_id AND isCheckout = 0 AND isDelete = 0;
 END;
