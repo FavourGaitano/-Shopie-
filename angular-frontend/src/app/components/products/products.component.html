@@ -11,7 +11,7 @@
       <div *ngIf="ProductsForm.get('name')?.invalid && ProductsForm.get('name')?.touched" class="error-message">Name is required</div>
     </div>
 
-   
+
 
   <div class="form-group">
   <input
@@ -19,7 +19,7 @@
     #fileInput
     id="fileInput"
     name="productImage"
-    formControlName="image"
+    
     accept="image/*"
     required
     (change)="uploadImage($event)"

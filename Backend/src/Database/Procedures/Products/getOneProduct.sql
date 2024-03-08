@@ -9,6 +9,6 @@ SELECT
         Products P
         INNER JOIN Categories C ON P.category_id = C.category_id
     WHERE 
-        P.product_id = @product_id;
+        P.product_id = @product_id
    
 END

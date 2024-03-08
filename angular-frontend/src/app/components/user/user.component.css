@@ -207,7 +207,8 @@
   #features {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
   }
   #features .f-box {
     width: 180px;
@@ -756,16 +757,15 @@ a:hover {
     display: flex;
     width:80vw;
     background-color: #771818;
-    flex-wrap: wrap;
+    
     justify-content: center;
     margin: 0 10px; /* Adjust margin for smaller screens */
     gap: 10px;
 }
 .display{
-  display: flex;
-  background-color: #771818;
-  width:100vw;
-    flex-wrap: wrap;
+    display: flex;
+
+    
     justify-content: center;
     margin: 0 10px; /* Adjust margin for smaller screens */
     gap: 10px;

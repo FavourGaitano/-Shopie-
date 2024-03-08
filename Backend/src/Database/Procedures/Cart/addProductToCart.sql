@@ -10,7 +10,7 @@ BEGIN
     DECLARE @user_id VARCHAR(200);
 
    
-    SELECT @user_id = user_id FROM Cart WHERE cart_id = @cart_id;
+    SELECT @user_id = user_id FROM Cart WHERE cart_id = @cart_id AND isCheckOut = 0;
 
     
     IF EXISTS (SELECT 1 FROM Cart WHERE cart_id = @cart_id AND product_id = @product_id)
@@ -40,7 +40,7 @@ BEGIN
     SELECT p.*, c.quantity
     FROM Products p
     INNER JOIN Cart c ON p.product_id = c.product_id
-    WHERE c.cart_id = @cart_id AND c.product_id = @product_id;
+    WHERE c.cart_id = @cart_id AND c.product_id = @product_id AND c.isDelete = 0;
 END;
 GO
 

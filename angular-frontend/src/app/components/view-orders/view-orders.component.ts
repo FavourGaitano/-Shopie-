@@ -41,9 +41,10 @@ export class ViewOrdersComponent {
 
     this.orderservice. changeStatus(id).subscribe({
       next: (res) => {
+        this.fetchOrders();
         console.log(res);
         if(res.message){
-          this.fetchOrders();
+
           this.successMessage = res.message;
         }
         else{

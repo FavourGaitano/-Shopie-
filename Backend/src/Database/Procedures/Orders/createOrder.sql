@@ -1,12 +1,12 @@
 CREATE OR ALTER PROCEDURE createOrder
-    @order_id VARCHAR(100),
     @cart_id VARCHAR(100),
+    @order_id VARCHAR(100),
     @user_id VARCHAR(200)
     
 AS
 BEGIN
     
-    IF EXISTS(SELECT 1 FROM Cart WHERE cart_id = @cart_id AND isCheckout = 1)
+    IF EXISTS(SELECT * FROM Cart WHERE cart_id = @cart_id AND isCheckout = 1)
     BEGIN
         INSERT INTO Orders(order_id, cart_id, user_id)
         VALUES(@order_id, @cart_id, @user_id)
@@ -18,5 +18,5 @@ BEGIN
     END
 END;
 
-SELECT * FROM Orders 
+ 
 

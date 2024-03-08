@@ -3,7 +3,7 @@ CREATE OR ALTER PROCEDURE CheckCartExists
 AS
 BEGIN
     
-    SELECT * FROM Cart WHERE user_id= @user_id;
+    SELECT * FROM Cart WHERE user_id= @user_id AND isCheckout=0;
 
     
 END;

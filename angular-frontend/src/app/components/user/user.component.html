@@ -78,7 +78,7 @@
       <p style="margin-left: 100px;">Summer Collection New Morden Design</p>
 
       <div class="pro-collection">
-        <div  class="display" style=" display:flex; flex-direction:row; gap:10px; justify-content:center">
+        <div  class="display" style=" display:flex; flex-direction:row; gap:10px; justify-content:center;">
           <div *ngFor="let product of paginatedProducts" class="product-cart"routerLink="/view-one-product/{{product.product_id}}">
               <img style="height:270px;" src="{{ product.image }}" alt="{{ product.name }}" />
               <span>{{ product.CategoryName }}</span>

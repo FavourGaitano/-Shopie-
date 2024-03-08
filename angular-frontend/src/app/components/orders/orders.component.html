@@ -1,0 +1,34 @@
+<body>
+  <div class="cart">
+    <!-- Success message placeholder -->
+    <div *ngIf="successMessage" class="success-message">{{successMessage}}</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Order Date</th>
+          <th>Status</th>
+          <th>Products</th>
+          <th>Quantities</th>
+          <th>Total Prices</th>
+          <th>Cancel Order</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of  orderArr; let i = index">
+          <td>{{ order.order_created_at }}</td>
+          <td>{{ order.status }}</td>
+          <td>{{ order.product_names }}</td>
+          <td>{{ order.quantities }}</td>
+          <td>{{ order.total_prices }}</td>
+          <td>
+            <!-- <button *ngIf="order.isCancel === 'true'" class="action-btn" (click)="cancelOrder(i)">Cancel</button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Error message display -->
+    <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
+  </div>
+</body>

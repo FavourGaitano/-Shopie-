@@ -62,6 +62,8 @@ export class UpdateUserComponent {
           this.successMessage = "User updated successfully!";
           this.errorMessage = '';
 
+          this.updateUserForm.reset();
+
         },
         error: (error) => {
 

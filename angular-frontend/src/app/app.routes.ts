@@ -18,6 +18,7 @@ import { UserComponent } from './components/user/user.component';
 import { ViewOneProductComponent } from './components/view-one-product/view-one-product.component';
 import { ViewOrdersComponent } from './components/view-orders/view-orders.component';
 import { PageNotfoundComponent } from './components/page-notfound/page-notfound.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 export const routes: Routes = [
 
@@ -41,5 +42,6 @@ export const routes: Routes = [
 
     { path: 'home', component: HomeComponent},
     { path: 'shopping-cart', component: ShoppingCartComponent, canActivate: [AuthGuard]},
+    { path: 'orders', component: OrdersComponent, canActivate: [AuthGuard]},
     {path:'**', component: PageNotfoundComponent},
 ];

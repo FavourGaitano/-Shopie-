@@ -36,6 +36,9 @@ export class CategoriesComponent {
           console.log(categoryResponse);
           this.successMessage = 'Category created successfully!';
           this.errorMessage = '';
+
+          this.categoryForm.reset();
+
         },
         error: (error) => {
           console.error("Category creation failed", error);

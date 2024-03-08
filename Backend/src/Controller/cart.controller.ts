@@ -118,18 +118,41 @@ export const getCartByUserId = async (req: Request, res: Response) => {
   }
 };
 
+//Dbhelper get cart by cart_id
+
+export const getOnecart = async (req: Request, res: Response) => {
+  try {
+    const id = req.params.cart_id;
+    console.log("Cart ID:", id);
+    let cart= (await Connection.execute("getOnecart", { cart_id: id })).recordset
+
+    return res.json({ cart });
+  } catch (error) {
+    console.log("Error in getting data from database", error);
+    return res
+      .status(400)
+      .json({ message: "There was an issue retrieving cart" });
+  }
+};
+
 //Dbhelper for when user checksoutcart
 export const checkoutCart = async (req: Request, res: Response) => {
   try {
     const id = req.params.cart_id;
+
+    let order_id = v4();
+
+    const { user_id } = req.body
+    console.log("I am the body", req.body);
+    
     console.log("Cart ID found:", id);
-    let cart = await Connection.execute("checkoutCart", { cart_id: id });
+    let cart = await Connection.execute("checkoutCart", { cart_id: id, user_id: user_id, order_id: order_id});
 
     return res.json({  message: "Cart checkout success! We are working on your order" });
   } catch (error) {
     console.log("Error in getting data from database", error);
     return res
-      .status(400)
+      .status(201)
       .json({ message: "There was an issue checking out cart" });
   }
 };

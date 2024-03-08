@@ -5,6 +5,7 @@ import {login} from '../interfaces/login.interfaces'
 import{Product} from '../interfaces/products.interfaces'
 import { Category } from '../interfaces/categories.interface';
 import { Cart } from '../interfaces/cart.interface';
+import { Order } from '../interfaces/order.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -57,6 +58,12 @@ export class AuthService {
 
     return this.http.post<{message:string, error:string}>('http://localhost:4001/cart', cart_details)
   }
+
+  createOrder(order_details:Order){
+
+    return this.http.post<{message:string, error:string}>('http://localhost:4001/order', order_details)
+  }
+
 
   isLoggedIn(): boolean {
     return !!localStorage.getItem('authToken');

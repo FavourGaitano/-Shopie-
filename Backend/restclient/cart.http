@@ -6,8 +6,8 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04
 
 {
     "user_id": "8ac1792b-2694-4793-93ed-2c2da3e6fc55",
-    "product_id": "28b5a782-a065-4a0d-8e5b-549cba4d36b6",
-    "quantity": 10
+    "product_id": "ca3eac34-1020-4366-b6b9-fff46cde7bf3",
+    "quantity": 1
     
     
 }
@@ -21,6 +21,12 @@ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04
 GET http://localhost:4001/cart/userID/8ac1792b-2694-4793-93ed-2c2da3e6fc55
 Content-Type: application/json
 token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk0OTIyNTcsImV4cCI6MTcwOTc1MTQ1N30.vVmoLh3GdSmHF7kLwraj819KnARolbcYQG9hBwuQLPw
+
+###GET CART BY ID
+GET http://localhost:4001/cart/e68c4222-5129-4951-9701-f1edaaa2e3e1
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNWQzNjBhLTAwYjQtNGQ2MC04MGIzLWQyNjU2MDlhZmZmMiIsImVtYWlsIjoiZGV2YnV5YW56aUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3MDk3ODI4MjksImV4cCI6MTcxMDA0MjAyOX0.gz-EWqweWjs8OVdSzqhfMehZJJjbsW2-5XOHd8zQbew
+
 
 ###CHECKOUT CART
 PUT http://localhost:4001/cart/checkout/073e7665-4ef0-4811-b52c-40b0434af917
